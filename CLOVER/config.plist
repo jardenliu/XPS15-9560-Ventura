@@ -512,6 +512,15 @@
 				</data>
 			</dict>
 		</dict>
+		<key>USB</key>
+		<dict>
+			<key>AddClockID</key>
+			<true/>
+			<key>FixOwnership</key>
+			<true/>
+			<key>Inject</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>DisableDrivers</key>
 	<array>
