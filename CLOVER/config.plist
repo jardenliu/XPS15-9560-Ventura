@@ -410,7 +410,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 darkwake=1 brcmfx-country=#a abm_firstpolldelay=16000 keepsyms=1 -lilubetaall -disablegfxfirmware -ngfxbeta</string>
+		<string>dart=0 darkwake=1 agdpmod=vit9696 brcmfx-country=#a abm_firstpolldelay=16000 keepsyms=1 -lilubetaall -disablegfxfirmware -ngfxbeta</string>
 		<key>CustomLogo</key>
 		<string>Alternate</string>
 		<key>Debug</key>
