@@ -34,6 +34,10 @@
 ## 安装教程
 
 ### 第一步：设置BIOS
+1. 使用windows下载官网新版本BIOS，推荐1.4以上版本。(!!!!!一定要从官网下载还有验证MD5)
+2. 参照[BIOS.md](https://github.com/jardenliu/XPS15-9560-Mojave/blob/master/BIOS.md)进行设置
+
+### 第二步：下载并制作镜像
 
 # 未完待续
 
