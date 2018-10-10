@@ -29,8 +29,15 @@
 ## 升级教程
 1. 下载仓库配置文件。
 2. 将自己的三码替换到下CLOVER目录下的`config.plist`对应位置。
-3. 把下载的CLOVER全覆盖自己本地的CLOVER文件夹。
+3. 把下载的CLOVER替换自己本地的CLOVER文件夹。
+4. 升级完之后，可能会出现以下异常现象，如`亮度不能调节`等。打开`终端`运行`sudo kextcache -i /`命令，重建缓存，重启。
 
 
-## 全新安装教程
-详见[安装教程](https://github.com/jardenliu/XPS15-9560-Mojave/blob/master/install.md)
+## 安装教程
+  详见[安装教程](https://github.com/jardenliu/XPS15-9560-Mojave/blob/master/install.md)
+  
+## 鸣谢
+[RehabMan](https://github.com/RehabMan)、[Acidanthera](https://github.com/acidanthera)、[PMheart](https://github.com/PMheart)、[alexandred](https://github.com/alexandred)、[wmchris](https://github.com/wmchris)、[darkhandz](https://github.com/darkhandz)、[gunslinger23](https://github.com/gunslinger23)、[goodwin](https://github.com/goodwin)等
+注：排名不分先后；如有遗漏，请勿见怪，感谢您的付出；
+
+
