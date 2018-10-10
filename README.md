@@ -38,6 +38,7 @@
   
 ## 鸣谢
 [RehabMan](https://github.com/RehabMan)、[Acidanthera](https://github.com/acidanthera)、[PMheart](https://github.com/PMheart)、[alexandred](https://github.com/alexandred)、[wmchris](https://github.com/wmchris)、[darkhandz](https://github.com/darkhandz)、[gunslinger23](https://github.com/gunslinger23)、[goodwin](https://github.com/goodwin)等
+
 注：排名不分先后；如有遗漏，请勿见怪，感谢您的付出；
 
 
