@@ -36,6 +36,13 @@
 ## 安装教程
   详见[安装教程](https://github.com/jardenliu/XPS15-9560-Mojave/blob/master/install.md)
   
+## 小问题处理方式
+1. 字体细、发虚
+  终端执行`defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`，注销再登录即可
+2. 1080P开启HIDPI
+  使用[xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
+
+  
 ## 鸣谢
 [RehabMan](https://github.com/RehabMan)、[Acidanthera](https://github.com/acidanthera)、[PMheart](https://github.com/PMheart)、[alexandred](https://github.com/alexandred)、[wmchris](https://github.com/wmchris)、[darkhandz](https://github.com/darkhandz)、[gunslinger23](https://github.com/gunslinger23)、[goodwin](https://github.com/goodwin)等
 
