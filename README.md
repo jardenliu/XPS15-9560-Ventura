@@ -41,6 +41,8 @@
   终端执行`defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`，注销再登录即可
 #### 2. 1080P开启HIDPI
   使用[xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
+#### 3. 安卓USB网络共享
+  把`Post-install`里面的`HoRNDIS.kext`放入`CLOVER/kexts/Other`
 
   
 ## 鸣谢
