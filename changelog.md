@@ -1,5 +1,8 @@
 # 更新日志
 
+### 2018-11-09
+- 日常驱动更新`WhateverGreen.kext`、`AppleALC.kext`和`Lilu.kext`
+
 ### 2018-09-26
 - 添加`USBPower.kext`替代`SSDT-UIAC.aml`和`USBInjectAll.kext`
 - 添加`agdpmod=pikera`启动参数patch HDMI,移除 `NvidiaGraphicsFixup.kext`
