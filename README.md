@@ -2,9 +2,8 @@
 > xps15-9560吃上黑果的clover配置，不方便下载的童鞋可以前往[yeliujun/XPS15-9560-Mojave](https://gitee.com/yeliujun/XPS15-9560-Mojave.git)
 
 ## 更新日志
-### 2018-09-26
-- 添加`USBPower.kext`替代`SSDT-UIAC.aml`和`USBInjectAll.kext`
-- 添加`agdpmod=pikera`启动参数patch HDMI,移除 `NvidiaGraphicsFixup.kext`
+### 2018-11-09
+- 日常驱动更新`WhateverGreen.kext`、`AppleALC.kext`和`Lilu.kext`
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Mojave/blob/master/changelog.md)
 
