@@ -42,6 +42,13 @@
   使用[xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
 #### 3. 安卓USB网络共享
   把`Post-install`里面的`HoRNDIS.kext`放入`CLOVER/kexts/Other`
+  
+### Wifi蓝牙设置
+1. 关闭wifi唤醒和小憩，`系统偏好设置` -> `节能` 取消两个选项卡中的`小憩`和`唤醒以供Wi-Fi网络访问`的勾选。
+2. 关闭蓝牙唤醒电脑, `系统偏好设置` -> `蓝牙` -> `高级` 取消所有勾选。
+3. ***非DW1830*** 需要替换`Post-install/非DW1830BT/USBPower.kext`到`CLOVER/kexts/Other/`
+4. ***DW1830*** 在windows下设置，设备管理器，右键dw1830（即无线网卡）->属性->高级->Bluetooth Cooperation（前面Bluetooth一致，后边可能不同），设置为disable
+
 
   
 ## 鸣谢
