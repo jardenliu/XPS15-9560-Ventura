@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.5</string>
+	<string>1.1.7</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -25,7 +25,7 @@
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.1.5</string>
+	<string>1.1.7</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
@@ -78,9 +78,11 @@
 				<string>pci14e4,43ba</string>
 				<string>pci14e4,43a3</string>
 				<string>pci14e4,43a0</string>
+				<string>pci14e4,43b1</string>
+				<string>pci14e4,43b2</string>
 			</array>
 			<key>IOProbeScore</key>
-			<integer>1241</integer>
+			<integer>2048</integer>
 			<key>IOProviderClass</key>
 			<string>IOPCIDevice</string>
 			<key>TruePowerOff</key>
