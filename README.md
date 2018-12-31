@@ -36,7 +36,7 @@
 
 
 ## 安装教程
-  详见[安装教程](https://github.com/jardenliu/XPS15-9560-Mojave/blob/master/install.md)
+  实在不想写教程，可以参考小米笔记本pro的安装教程，详见[bilibili小米pro 教程](https://www.bilibili.com/video/av23052183)
   
 ## 小问题处理方式
 #### 1. 字体细、发虚
