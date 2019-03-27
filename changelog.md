@@ -1,5 +1,8 @@
 # 更新日志
 
+### 2019-03-27
+- 更新clover到`4898`版本，支持10.14.4
+
 ### 2018-11-09
 - 日常驱动更新`WhateverGreen.kext`、`AppleALC.kext`和`Lilu.kext`
 
