@@ -5,8 +5,8 @@
 * 想更换VirtualSmc，请到[VirtualSmc 分支](https://github.com/jardenliu/XPS15-9560-Mojave/tree/VirtualSmc)下载
 
 ## 更新日志
-### 2018-11-09
-- 日常驱动更新`WhateverGreen.kext`、`AppleALC.kext`和`Lilu.kext`
+### 2019-03-27
+- 更新clover到`4898`版本，支持10.14.4
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Mojave/blob/master/changelog.md)
 
