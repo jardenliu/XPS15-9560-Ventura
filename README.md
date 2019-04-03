@@ -1,14 +1,12 @@
 # XPS15-9560-Mojave
 > xps15-9560吃上黑果的clover配置，不方便下载的童鞋可以前往[yeliujun/XPS15-9560-Mojave](https://gitee.com/yeliujun/XPS15-9560-Mojave.git)
 
-## 工作太忙，更新不是很及时，有条件的小伙伴可以给我提pull requests
-
 ## VirtualSmc版本已更新
 * 想更换VirtualSmc，请到[VirtualSmc 分支](https://github.com/jardenliu/XPS15-9560-Mojave/tree/VirtualSmc)下载
 
 ## 更新日志
-### 2019-03-27
-- 更新clover到`4898`版本，支持10.14.4
+### 2019-04-03
+- 日常更新Lilu系列
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Mojave/blob/master/changelog.md)
 
