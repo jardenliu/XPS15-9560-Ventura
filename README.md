@@ -10,6 +10,9 @@
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Mojave/blob/master/changelog.md)
 
+## WARNING
+1. 不开启`FileValue加密`，不开启`FileValue加密`，不开启`FileValue加密`！！！
+
 ## 配置
 - CPU：Intel I7 7700HQ
 - 内存：16G(8G*2) 2400MHz DDR4
