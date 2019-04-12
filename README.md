@@ -1,65 +1,87 @@
 # XPS15-9560-Mojave
 
-> XPS15-9560 Hackintosh Clover Config.
+> xps15-9560 吃上黑果的 clover 配置，不方便下载的童鞋可以前往[yeliujun/XPS15-9560-Mojave](https://gitee.com/yeliujun/XPS15-9560-Mojave.git)
 
-[English](README.md) | [中文](README_CN.md)
+[English](README_EN.md) | [中文](README.md)
 
-## VirtualSmc Version
+## VirtualSmc 版本已更新
 
-- If you wanna try it，check out [VirtualSmc branch](https://github.com/jardenliu/XPS15-9560-Mojave/tree/VirtualSmc)
+- 想更换 VirtualSmc，请到[VirtualSmc 分支](https://github.com/jardenliu/XPS15-9560-Mojave/tree/VirtualSmc)下载
 
-## Warning
+## 打字防误触
 
-1. Don't turn on `FileValue Encryption`！！！
+1. 新版 I2C 有打字防误触了！！！
+2. 安装办法，替换`Post-install/防误触/`下面的全部 kext 文件到`CLOVER/kexts/Other/`。
+3. 原理是打字的时候禁用触摸板。
+4. 有点 bug，打字之后恢复触摸板有点延迟。例如用快捷键粘贴的时候，触摸板会短暂不可用，感觉有个 0.5s 的延迟。
+5. 小伙伴按需使用
 
-## Configuration
+## 更新日志
+
+### 2019-04-03
+
+- 日常更新 Lilu 系列
+
+更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Mojave/blob/master/changelog.md)
+
+## WARNING
+
+1. 不开启`FileValue加密`，不开启`FileValue加密`，不开启`FileValue加密`！！！
+
+## 配置
 
 - CPU：Intel I7 7700HQ
-- RAM：16G(8G\*2) 2400MHz DDR4
-- HardDisk：Toshiba NVMe 512G
-- WIFI：DW1830
-- Screen：4K(touch)
+- 内存：16G(8G\*2) 2400MHz DDR4
+- 硬盘：东芝 NVMe 512G
+- WIFI 网卡：已更换为博通 DW1830
+- 屏幕分辨率：4K 触控屏
 
-## What's not Working
+## 特性
 
-1. Fingerprint sensor
-2. Discrete graphic card, since macOS doesn't support Optimus technolog
-3. SD Card Reader
-4. Intel Bluetooth only works after warm restart from Windows
-5. Intel Wi-Fi Killer 1535
-6. Everything else works well
+- CPU: I7-7700HQ，已启用原生电源管理；多档变频正常，添加了`CPUFriendDataProvider.kext`,低频可到`800MHZ`，续航表现更好。
+- 声卡: ALC298, 注入 ID：72，声音正常。耳机切换采用 ALCPluginFix。(Combo jack 在 Mojave 下面似乎失效了)
+- 触摸板: 含触屏，使用`VoodooI2C`,支持 Mac 原生手势。缺点就是没有防误触
+- WIFI: 原配 Killer 1535 无法驱动，更换 DW1830, 实现免驱。（DW1560 应该也可以正常使用）
+- 蓝牙: 驱动正常，极少数情况下会设备丢失，handoff 也正常。（没测过 1535 的蓝牙）
+- ACPI： 使用 hotpatch 进行热修复，亮度快捷键映射正常。
+- USB: USB3 端口均正常使用; TYPE-C 可以热插拔使用；雷电 3 不支持热插拔
+- 显卡：集显 HD630 注入`591B0000`正常驱动；独显 GTX 1050 无解。
+- 读卡器：无法使用
 
-## Installation
+## 升级教程
 
-Please refer to the detailed installation tutorial [Xiaomi Mi Notebook Pro High Sierra 10.13.6](https://www.tonymacx86.com/threads/guide-xiaomi-mi-notebook-pro-high-sierra-10-13-6.242724) or video tutorial [Xiaomi NoteBook PRO HACKINTOSH INSTALLATION GUIDE !!!](https://www.youtube.com/watch?v=72sPmkpxCvc).
+1. 下载仓库配置文件。
+2. 将自己的三码替换到下 CLOVER 目录下的`config.plist`对应位置。
+3. 把下载的 CLOVER 替换自己本地的 CLOVER 文件夹。
+4. 升级完之后，可能会出现以下异常现象，如`亮度不能调节`等。打开`终端`运行`sudo kextcache -i /`命令，重建缓存，重启。
 
-If the tracpad doesn't work during installation, please plug a wired mouse or a wireless mouse projector before the installation. After the installation completes, open `Terminal.app` and type `sudo kextcache -i /`. Wait for the process ending and restart the device. Enjoy your trackpad!
+## 安装教程
 
-## Work around
+实在不想写教程，可以参考小米笔记本 pro 的安装教程，详见[bilibili 小米 pro 教程](https://www.bilibili.com/video/av23052183)
 
-#### 1. fix fuzzy font
+## 小问题处理方式
 
-open `Terminal.app` and exec
+#### 1. 字体细、发虚
 
-```bash
-$ defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
-```
+终端执行`defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`，注销再登录即可
 
-then reboot.
+#### 2. 1080P 开启 HIDPI
 
-#### 2. 1080P enable HIDPI
+使用[xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
 
-[xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
+#### 3. 安卓 USB 网络共享
 
-#### 3. Android USB Network Sharing
+把`Post-install`里面的`HoRNDIS.kext`放入`CLOVER/kexts/Other`
 
-set `Post-install/HoRNDIS.kext` to `CLOVER/kexts/Other`
+### Wifi 蓝牙设置
 
-### Wifi & Bluetooth Setting
+1. 关闭 wifi 唤醒和小憩，`系统偏好设置` -> `节能` 取消两个选项卡中的`小憩`和`唤醒以供Wi-Fi网络访问`的勾选。
+2. 关闭蓝牙唤醒电脑, `系统偏好设置` -> `蓝牙` -> `高级` 取消所有勾选。
+3. **_非 DW1830_** 需要替换`Post-install/非DW1830BT/USBPower.kext`到`CLOVER/kexts/Other/`
+4. **_DW1830_** 在 windows 下设置，设备管理器，右键 dw1830（即无线网卡）->属性->高级->Bluetooth Cooperation（前面 Bluetooth 一致，后边可能不同），设置为 disable
 
-1. Disable Power Nap，`System Preferences` -> `Energy Saver` disable all `Power Nap` options, and disable `Wake for Wi-Fi network access` option.
-2. dissble Wake for Bluetooth, `System Preferences` -> `Bluetooth` -> `Advanced` disable all options.
+## 鸣谢
 
-## Special Thanks to
+[RehabMan](https://github.com/RehabMan)、[Acidanthera](https://github.com/acidanthera)、[PMheart](https://github.com/PMheart)、[alexandred](https://github.com/alexandred)、[wmchris](https://github.com/wmchris)、[darkhandz](https://github.com/darkhandz)、[gunslinger23](https://github.com/gunslinger23)、[goodwin](https://github.com/goodwin)等
 
-[RehabMan](https://github.com/RehabMan)、[Acidanthera](https://github.com/acidanthera)、[PMheart](https://github.com/PMheart)、[alexandred](https://github.com/alexandred)、[wmchris](https://github.com/wmchris)、[darkhandz](https://github.com/darkhandz)、[gunslinger23](https://github.com/gunslinger23)、[goodwin](https://github.com/goodwin) and so on.
+注：排名不分先后；如有遗漏，请勿见怪，感谢您的付出；
