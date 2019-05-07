@@ -4,9 +4,9 @@
 
 [English](README_EN.md) | [中文](README.md)
 
-## VirtualSmc 版本已更新
+## 过期了
 
-- 想更换 VirtualSmc，请到[VirtualSmc 分支](https://github.com/jardenliu/XPS15-9560-Mojave/tree/VirtualSmc)下载
+- FakeSMC版本不在维护, 使用 [VirtualSMC 版本](https://github.com/jardenliu/XPS15-9560-Mojave/tree/master) 代替.
 
 ## 打字防误触
 

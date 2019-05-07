@@ -4,9 +4,9 @@
 
 [English](README_EN.md) | [中文](README.md)
 
-## VirtualSmc Version
+## Deprecated
 
-- If you wanna try it，check out [VirtualSmc branch](https://github.com/jardenliu/XPS15-9560-Mojave/tree/VirtualSmc)
+- FakeSMC version is deprecated, use the [VirtualSMC Master](https://github.com/jardenliu/XPS15-9560-Mojave/tree/master) instead.
 
 ## Warning
 
