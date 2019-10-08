@@ -74,6 +74,9 @@ sudo mount -uw /
 3. **_非 DW1830_** 需要替换`Post-install/非DW1830BT/USBPower.kext`到`CLOVER/kexts/Other/`
 4. **_DW1830_** 在 windows 下设置，设备管理器，右键 dw1830（即无线网卡）->属性->高级->Bluetooth Cooperation（前面 Bluetooth 一致，后边可能不同），设置为 disable
 
+## 贡献者
+[SilentSliver](https://github.com/SilentSliver)
+
 ## 鸣谢
 
 [RehabMan](https://github.com/RehabMan)、[Acidanthera](https://github.com/acidanthera)、[PMheart](https://github.com/PMheart)、[alexandred](https://github.com/alexandred)、[wmchris](https://github.com/wmchris)、[darkhandz](https://github.com/darkhandz)、[gunslinger23](https://github.com/gunslinger23)、[goodwin](https://github.com/goodwin)等
