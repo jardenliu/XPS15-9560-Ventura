@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo mount -uw /
 sudo cp ALCPlugFix /usr/bin
 sudo chmod 755 /usr/bin/ALCPlugFix
 sudo chown root:wheel /usr/bin/ALCPlugFix
