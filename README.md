@@ -45,7 +45,7 @@
 
 ## 提示
 
-1. 不开启`FileValue加密`，不开启`FileValue加密`，不开启`FileValue加密`！！！
+1. 不要开启`文件保险箱加密(FileValue)`，不要开启`文件保险箱加密(FileValue)`，不要开启`文件保险箱加密(FileValue)`！！！
 
 ## 小问题处理方式
 
