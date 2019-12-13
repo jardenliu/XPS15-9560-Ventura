@@ -374,9 +374,6 @@
 		</dict>
 		<key>SortedOrder</key>
 		<array>
-			<string>SSDT-XHCI_Syspref.aml</string>
-			<string>SSDT-WIFI_Syspref.aml</string>
-			<string>SSDT-NVME_Syspref.aml</string>
 			<string>SSDT-IGPU_Syspref.aml</string>
 			<string>SSDT-XOSI.aml</string>
 			<string>SSDT-Config.aml</string>
