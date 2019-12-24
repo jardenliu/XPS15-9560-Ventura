@@ -2,15 +2,21 @@
 
 > xps15-9560 吃上黑果的 clover 配置，不方便下载的童鞋可以前往[yeliujun/XPS15-9560-Catalina](https://gitee.com/yeliujun/XPS15-9560-Catalina.git)
 
-[English](README_EN.md) | [中文](README.md)
+ [中文](README.md) | [English](README_EN.md)
 
 ## 更新日志
 
-### 2019-10-08
+### 主要版本更新 2019-10-08
 
 1. 支持 10.15
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
+
+### 内置驱动更新 2019-12-20
+
+1. 更新 `VoodoI2C` 至 `2.3` 版本
+
+当前配置可在 macOS `10.15.2` 下正常运行。
 
 ## 配置
 
@@ -39,7 +45,8 @@
 1. 下载仓库配置文件。
 2. 将自己的三码替换到下 CLOVER 目录下的`config.plist`对应位置。
 3. 把下载的 CLOVER 替换自己本地的 CLOVER 文件夹。
-4. 升级完之后，可能会出现以下异常现象，如`亮度不能调节`等。打开`终端`运行`sudo kextcache -i /`命令，重建缓存，重启。
+4. 升级完之后，可能会出现以下异常现象，如`亮度不能调节`，`USB-C设备不能正常工作`等，则需要重建kext缓存。打开`终端`运行`sudo kextcache -i /`命令，重建缓存，重启。
+5. 建议：每次小版本升级后请重建缓存，可以在桌面新建一个`rebuilt.command`文件，内用文本编辑器写入`sudo kextcache -i /`后保存即可，有需要时双击后输入电脑密码即可重建。
 
 ## 安装教程
 
@@ -89,8 +96,8 @@ sudo mount -uw /
 
 1. 关闭 wifi 唤醒和小憩，`系统偏好设置` -> `节能` 取消两个选项卡中的`小憩`和`唤醒以供Wi-Fi网络访问`的勾选。
 2. 关闭蓝牙唤醒电脑, `系统偏好设置` -> `蓝牙` -> `高级` 取消所有勾选。
-3. **_非 DW1830_** 需要替换`Post-install/非DW1830BT/USBPower.kext`到`CLOVER/kexts/Other/`
-4. **_DW1830_** 在 windows 下设置，设备管理器，右键 dw1830（即无线网卡）->属性->高级->Bluetooth Cooperation（前面 Bluetooth 一致，后边可能不同），设置为 disable
+3. 对于 *非 DW1830* ，需要替换`Post-install/非DW1830BT/USBPower.kext`到`CLOVER/kexts/Other/`
+4. 对于 *DW1830* ，为了让其在Windows下以更佳状态工作，请在Windows中按下`Win+X+M`打开`设备管理器`，在`网络适配器`栏目下双击`Dell Wireless 1830 802.11ac`（即无线网卡）在高级选项卡中找到`Bluetooth Cooperation`（前面 Bluetooth 一致，后边可能不同），设置为`Disable`。
 
 ## 贡献者
 [SilentSliver](https://github.com/SilentSliver)

@@ -2,14 +2,42 @@
 
 > XPS15-9560 Hackintosh Clover Config.
 
-[English](README_EN.md) | [中文](README.md)
+ [中文](README.md) | [English](README_EN.md) 
+
+## Update log
+
+### Main Version Update 2019-10-08
+
+1. Add support for 10.15
+
+For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
+
+### Integrated Drivers Update 2019-12-20
+
+1. Update `VoodoI2C` to `2.3`
+
+macOS `10.15.2` works properly in current configuration.
+
+## Update log
+
+### Main Version Update 2019-10-08
+
+1. Add support for 10.15
+
+For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
+
+### Integrated Drivers Update 2019-12-20
+
+1. Update `VoodoI2C` to `2.3`
+
+macOS `10.15.2` works properly in current configuration.
 
 ## Configuration
 
 - CPU：Intel I7 7700HQ
 - RAM：16G(8G\*2) 2400MHz DDR4
 - HardDisk：Toshiba NVMe 512G
-- WIFI：DW1830
+- WIFI：Dell Wireless 1830 (Also named as DW1830)
 - Screen：4K(touch)
 
 ## What's not Working
@@ -18,7 +46,7 @@
 2. Discrete graphic card, since macOS doesn't support Optimus technolog
 3. SD Card Reader
 4. Intel Bluetooth only works after warm restart from Windows
-5. Intel Wi-Fi Killer 1535
+5. Stock Wi-Fi Card Killer Wireless 1535
 6. Everything else works well
 
 ## Installation
@@ -57,10 +85,16 @@ set `Post-install/HoRNDIS.kext` to `CLOVER/kexts/Other`
 sudo mount -uw /
 ```
 
+#### 5. macOS Minor Update Suggestions
+
+Rebuild kextcache after each macOS minor update, you can create a file named `rebuilt.command` containing the command `sudo kextcache -i /`. When an update is finished, you can directly run this file and input your password to rebuild kextcache. This can repair some minor issues such as `Brightness Control Failure` or `USB-C Device cannot work properly`.
+
+
 ### Wifi & Bluetooth Setting
 
 1. Disable Power Nap，`System Preferences` -> `Energy Saver` disable all `Power Nap` options, and disable `Wake for Wi-Fi network access` option.
 2. dissble Wake for Bluetooth, `System Preferences` -> `Bluetooth` -> `Advanced` disable all options.
+3. For **_DW1830_** users, in order to imporve its performance and stability in Windows, please hit `Win+X+M` to open `Device Manager`, find the column Network Adapter and find `Dell Wireless 1830 802.11ac` and double click it, in the `Advanced` tab, find `Bluetooth Cooperation` and set it to `Disable`.  
 
 ## Contributor
 [SilentSliver](https://github.com/SilentSliver)
