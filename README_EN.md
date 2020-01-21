@@ -9,6 +9,7 @@
 ### Main Version Update 2019-10-08
 
 1. Add support for 10.15
+
 macOS `10.15.2` works properly in current configuration.
 
 ### Integrated Drivers Update 2019-12-20
