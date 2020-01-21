@@ -10,11 +10,27 @@
 
 1. Add support for 10.15
 
-macOS `10.15.2` works properly in current configuration.
+For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
 ### Integrated Drivers Update 2019-12-20
 
-For more details, please visit [changelog_EN.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog_EN.md)
+1. Update `VoodoI2C` to `2.3`
+
+macOS `10.15.2` works properly in current configuration.
+
+## Update log
+
+### Main Version Update 2019-10-08
+
+1. Add support for 10.15
+
+For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
+
+### Integrated Drivers Update 2019-12-20
+
+1. Update `VoodoI2C` to `2.3`
+
+macOS `10.15.2` works properly in current configuration.
 
 ## Configuration
 
