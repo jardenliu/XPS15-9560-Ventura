@@ -12,9 +12,11 @@
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
-### 内置驱动更新 2019-12-20
+### 内置驱动更新 2020-01-21
 
-1. 更新 `VoodoI2C` 至 `2.3` 版本
+1. 更新 `Lilu` 及其组件至最新版本；
+2. 更新`FakeSMC`分支驱动至最新版本；
+3. 祝大家新年快乐。
 
 当前配置可在 macOS `10.15.2` 下正常运行。
 
