@@ -18,6 +18,10 @@ For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15
 2. Update all Kexts in branch `FakeSMC` to last version;
 3. Happy Chinese New Year!
 
+### Integrated Drivers Update 2019-12-20
+
+1. Update `VoodoI2C` to `2.3`
+
 macOS `10.15.2` works properly in current configuration.
 
 ## Configuration
