@@ -6,9 +6,9 @@
 
 ## 更新日志
 
-### 主要版本更新 2019-10-08
+### 主要版本更新 2020-02-02
 
-1. 支持 10.15
+1. 添加OpenCore分支，提交OpenCore引导尝鲜版。
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
