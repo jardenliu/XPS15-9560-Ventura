@@ -1,24 +1,18 @@
 # XPS15-9560-Catalina
 
-> XPS15-9560 Hackintosh Clover Config.
+> XPS15-9560 Hackintosh OpenCore Config.
 
  [中文](README.md) | [English](README_EN.md) 
 
 ## Update log
 
-### Main Version Update 2019-10-08
+### Main Version Update 2020-02-02
 
-1. Add support for 10.15
+1. Add OpenCore Branch
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
-### Integrated Drivers Update 2020-01-21
-
-1. Update all `Lilu` plugins to last version;
-2. Update all Kexts in branch `FakeSMC` to last version;
-3. Happy Chinese New Year!
-
-macOS `10.15.2` works properly in current configuration.
+### Integrated Drivers Update 
 
 ## Configuration
 
@@ -35,7 +29,9 @@ macOS `10.15.2` works properly in current configuration.
 3. SD Card Reader
 4. Intel Bluetooth only works after warm restart from Windows
 5. Stock Wi-Fi Card Killer Wireless 1535
-6. Everything else works well
+6. USB Type-C Hotplug
+7. Everything else works well
+8. Boot Windows
 
 ## Installation
 

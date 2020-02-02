@@ -1,6 +1,6 @@
 # XPS15-9560-Catalina
 
-> xps15-9560 吃上黑果的 clover 配置，不方便下载的童鞋可以前往[yeliujun/XPS15-9560-Catalina](https://gitee.com/yeliujun/XPS15-9560-Catalina.git)
+> xps15-9560 吃上黑果的 OpenCore 配置，不方便下载的童鞋可以前往[yeliujun/XPS15-9560-Catalina](https://gitee.com/yeliujun/XPS15-9560-Catalina.git)
 
  [中文](README.md) | [English](README_EN.md)
 
@@ -12,13 +12,8 @@
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
-### 内置驱动更新 2020-01-21
+### 内置驱动更新 暂无
 
-1. 更新 `Lilu` 及其组件至最新版本；
-2. 更新`FakeSMC`分支驱动至最新版本；
-3. 祝大家新年快乐。
-
-当前配置可在 macOS `10.15.2` 下正常运行。
 
 ## 配置
 
@@ -36,17 +31,21 @@
 - WIFI: 原配 Killer 1535 无法驱动，更换 DW1830, 实现免驱。（DW1560 应该也可以正常使用）
 - 蓝牙: 驱动正常，极少数情况下会设备丢失，handoff 也正常。（没测过 1535 的蓝牙）
 - ACPI： 使用 hotpatch 进行热修复，亮度快捷键映射正常。
-- USB: USB3 端口均正常使用; TYPE-C 可以热插拔使用；雷电 3 不支持热插拔
+- USB: USB3 端口均正常使用; TYPE-C 暂时不可以热插拔使用；雷电 3 不支持热插拔
 - 显卡：集显 HD630 注入`591B0000`正常驱动；独显 GTX 1050 无解。
 - 读卡器：无法使用
 - DRM：可以播放，但TV应用中DRM硬解目前WEG的进度来看仍旧需要独显，不能完美支持
-- 睡眠：目前受Clover版本影响Type-C口睡眠可能会出现Kennel Panic的问题，如果遇到这个问题的话将旧版的Cloverx64.efi替换尝试。
+
+## 当前问题
+1. 目前不能正常引导Windows系统，我也不知道为什么
+2. Type-C 的热插拔也很迷，我也不知道为什么
+3. 可能会出现插电源kp的情况
 
 ## 升级教程
 
 1. 下载仓库配置文件。
-2. 将自己的三码替换到下 CLOVER 目录下的`config.plist`对应位置。
-3. 把下载的 CLOVER 替换自己本地的 CLOVER 文件夹。
+2. 将自己的三码替换到下 OC 目录下的`config.plist`对应位置。
+3. 把下载的 OC 替换自己本地的 OC 文件夹。
 4. 升级完之后，可能会出现以下异常现象，如`亮度不能调节`，`USB-C设备不能正常工作`等，则需要重建kext缓存。打开`终端`运行`sudo kextcache -i /`命令，重建缓存，重启。
 5. 建议：每次小版本升级后请重建缓存，可以在桌面新建一个`rebuilt.command`文件，内用文本编辑器写入`sudo kextcache -i /`后保存即可，有需要时双击后输入电脑密码即可重建。
 
@@ -56,19 +55,19 @@
 下面为SilverSliver提供的安装教程，仅供XPS 15系列参考：
 1. 下载macOS原版镜像（或者其他人提供带引导的也可以），文件格式为`dmg`；
 2. 使用[`etcher`](https://www.balena.io/etcher/)或其他工具刻录镜像至U盘；
-3. 将提供的`CLOVER`文件夹通过各种手段（如使用`DiskGenius`挂载等不一一列举）放在硬盘的`EFI`或者`ESP`分区中的`EFI`文件夹下，然后重启进入`BIOS`；
+3. 将提供的`OC`文件夹通过各种手段（如使用`DiskGenius`挂载等不一一列举）放在硬盘的`EFI`或者`ESP`分区中的`EFI`文件夹下，然后重启进入`BIOS`；
 4. 重启在`DELL`LOGO出现时按`F2`进入`BIOS`（建议：进入`BIOS`前先拔掉U盘等所有外置可引导设备，只留硬盘），我们开始创建启动项：
 	1. 在`Boot Sequence`->`Boot List Option`确保是启动方式是`UEFI`，然后右边点击`Add Boot Option`出现一个对话框；
-	2. 对话框有三部分`Boot Option Name`，`File System List`和`File Name`，这里我们先填写`Boot Option Name`，为了便于识别可以填写为`Clover`（其他的也可以）；
+	2. 对话框有三部分`Boot Option Name`，`File System List`和`File Name`，这里我们先填写`Boot Option Name`，为了便于识别可以填写为`OpenCore`（其他的也可以）；
 	3. 点击`File Name`那里右边的`...`按钮，会再弹出一个窗口；
 	4. 在弹出的新窗口下有三部分：`File System`用来选择引导设备，中间是图形化的文件选择器，最下面`Selection`则是选择的文件路径。这里如果没有其他外置可引导设备则默认为硬盘的`EFI`，如果不是请手动在`File System`的下拉菜单切换；
-	5. 在中间的图形化文件选择器中依次选择`EFI``CLOVER``CLOVERX64.efi`后，一路确认回到`Boot Sequence`那里，然后将你创建的启动项通过右边的上下按钮调整到第一个；
+	5. 在中间的图形化文件选择器中依次选择`EFI``OC``OpenCore.efi`后，一路确认回到`Boot Sequence`那里，然后将你创建的启动项通过右边的上下按钮调整到第一个；
 	6. 修改完成之后保存退出`BIOS`即可。
 	
-5. 插上镜像U盘，然后启动电脑，在`CLOVER`中选择`macOS Install from XXX(表示移动设备名称)`进入安装界面；
+5. 插上镜像U盘，然后启动电脑，在`OpenCore`中选择`macOS Install from XXX(表示移动设备名称)`进入安装界面；
 6. 这步和白果一样，如果你需要分区，可以在`磁盘管理`进行分区，如果已经分好区，但是在安装阶段不可用，则需要在磁盘管理格式化分区，这里需要记下自己安装macOS的分区名称，这里先记作`XXXX`，随后就是无脑安装了；
-7. 安装过程中会重启几次，当重启后`CLOVER`中出现`macOS Install from XXXX(分区名称)`则选择该项（U盘的使命已经结束）拔掉U盘，这步安装完成后会重启；
-8. 待第七步结束之后你的`CLOVER`中应该会出现一个`macOS`的选项，回车键进入就可以正常使用了。
+7. 安装过程中会重启几次，当重启后`OpenCore`中出现`macOS Install from XXXX(分区名称)`则选择该项（U盘的使命已经结束）拔掉U盘，这步安装完成后会重启；
+8. 待第七步结束之后你的`OpenCore`中应该会出现一个`macOS`的选项，回车键进入就可以正常使用了。
 
 ## 提示
 
