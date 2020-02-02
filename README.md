@@ -12,6 +12,7 @@
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
+
 ### 内置驱动更新 2020-01-21
 
 1. 更新 `Lilu` 及其组件至最新版本；
