@@ -42,12 +42,6 @@ DefinitionBlock ("", "SSDT", 2, "hack", "BCKM", 0x00000000)
         }
     }
     
-    Scope (_SB.PCI0.PEG0.PEGP)
-    {
-        Method (BRT6, 2, NotSerialized)
-        {
-        }
-    }
     
     // inject PNLF for Skylake to make brightness control work[1]
     Scope (_SB)

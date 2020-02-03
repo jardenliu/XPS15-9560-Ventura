@@ -10,10 +10,21 @@
 DefinitionBlock ("", "SSDT", 2, "hack", "TYPC", 0x00000000)
 {
     External (_SB_.PCI0.RP15.PXSX, DeviceObj)
+    External (_GPE.XTBX, MethodObj)
 
     // turn off warning that will cause sleep failure[2]
     Scope (\_GPE)
     {
+        Method (XTBT, 2, NotSerialized)
+        {
+            If (_OSI ("Darwin"))
+            {            Return (Zero)
+                }
+            Else
+            {
+                Return (\_GPE.XTBX ())
+            }
+        }
         Method (YTBT, 2, NotSerialized)
         {
             Return (Zero)
@@ -33,11 +44,6 @@ DefinitionBlock ("", "SSDT", 2, "hack", "TYPC", 0x00000000)
             {
                 Return (Zero)
             }
-        }
-
-        Method (_STA, 0, NotSerialized)  // _STA: Status
-        {
-            Return (0x0F)
         }
     }
 }
