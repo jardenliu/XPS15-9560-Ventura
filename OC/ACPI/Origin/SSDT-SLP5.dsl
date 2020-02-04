@@ -6,7 +6,12 @@
 
 DefinitionBlock ("", "SSDT", 2, "hack", "GPRW", 0x00000000)
 {
-    External (XPRW, MethodObj)    // 2 Arguments
+    External(XPRW, MethodObj)    // 2 Arguments
+    External(SMD0, FieldUnitObj)
+    External(_SB.LID0, DeviceObj)
+    External(_SB.XTNV, MethodObj)
+    External(_SB.LID0, DeviceObj)
+    External(_SB.LID0.XLID, MethodObj)
 
     Scope (\)
     {
@@ -24,8 +29,7 @@ DefinitionBlock ("", "SSDT", 2, "hack", "GPRW", 0x00000000)
             Return (\XPRW (Arg0, Arg1))
         }
     }
-    External(_SB.LID0, DeviceObj)
-    External(_SB.XTNV, MethodObj)
+    
     
     Scope (_SB)
     {
@@ -58,8 +62,6 @@ DefinitionBlock ("", "SSDT", 2, "hack", "GPRW", 0x00000000)
         }
     }
     
-    External(_SB.LID0, DeviceObj)
-    External(_SB.LID0.XLID, MethodObj)
     Scope (_SB.LID0)
     {
         Method (_LID, 0, NotSerialized)
@@ -93,18 +95,20 @@ DefinitionBlock ("", "SSDT", 2, "hack", "GPRW", 0x00000000)
     
     Device (SLPC)
     {
-        Name (_ADR, Zero)  // _ADR: Address
+        Name (_ADR, 0)  // _ADR: Address
         Method (HELP, 0, NotSerialized)
         {
             Debug = "SMOD indicates mode of sleep. 0: PNP0C0D, 1: PNP0C0E"
             Debug = "SFNK indicates state of sleep. 1: Press Sleep Function Key"
         }
-        Name (SMOD, Zero)
-        Name (SFNK, Zero)
+        Name (SMOD, 0)
+        Name (SFNK, 0)
+        Name (DPTS, 1)
         Method (_STA, 0, NotSerialized)
         {
             If (_OSI ("Darwin"))
             {
+                SMD0 = 0
                 Return (0x0F)
             }
             Else

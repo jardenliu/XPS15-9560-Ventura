@@ -1,9 +1,9 @@
 DefinitionBlock ("", "SSDT", 2, "hack", "ADP1", 0x00000000)
 {
-    External (_SB_.ADP1, DeviceObj)
+    External (_SB_.AC, DeviceObj)
     External (_SB_.PCI0.LPCB.EC__, DeviceObj)
 
-    Scope (\_SB.ADP1)
+    Scope (\_SB.AC)
     {
         If (_OSI ("Darwin"))
         {
