@@ -48,7 +48,7 @@ If the tracpad doesn't work during installation, please plug a wired mouse or a 
 
 1. Don't turn on `FileValue Encryption`！！！
 
-## Other Configurations (i5/1080P) info
+## Other Configurations (i5/1080P) note
 If you are using a 1080P screen, please notice：
 1. （not must）Use [xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi) to enable HiDPI；
 2. Use `Clover Configurator` to edit `CLOVER\Config.plist`, and delete all values in `Boot Graphics`, or use `Other Text Editor (Such as NotePad)` and delete the part as after shows：
