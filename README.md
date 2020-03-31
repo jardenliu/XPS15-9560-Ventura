@@ -91,7 +91,7 @@
 		<integer>1</integer>
 	</dict>
    ```
-3. 使用`Clover Configurator`修改`CLOVER\Config.plist`中`引导界面`部分`主题`部分填写`Outlines1080`或使用`其他文本编辑器（如记事本等）`将`Outlines4K`替换为`Outlines1080`；
+3. 使用`Clover Configurator`修改`CLOVER\Config.plist`中`引导界面`部分`主题`部分填写`Outlines1080`或使用`其他文本编辑器（如记事本等）`将`Outlines4K`替换为`Outlines1080`（如果想换回原先的主题则修改改为`Universe`）；
 
 如果你是非i7用户，请注意以下几点：
 1. （必须）确保你现在已经安装好系统了；
