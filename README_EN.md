@@ -6,23 +6,20 @@
 
 ## Update log
 
-### Main Version Update 2019-10-08
+### Main Version Update 2020-02-02
 
-1. Add support for 10.15
+1. Add branch of OpenCore
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
-### Integrated Drivers Update 2020-01-21
+### Integrated Drivers Update 2020-03-31
 
-1. Update all `Lilu` plugins to last version;
-2. Update all Kexts in branch `FakeSMC` to last version;
-3. Happy Chinese New Year!
+1. Fix some Backlight level issues;
+2. Update all `Lilu` plugins to last version;
+3. Update `Clover` to 5108;
+4. Replace Clover Theme to `Outlines`;
 
-### Integrated Drivers Update 2019-12-20
-
-1. Update `VoodoI2C` to `2.3`
-
-macOS `10.15.2` works properly in current configuration.
+macOS `10.15.4` works properly in current configuration.
 
 ## Configuration
 
@@ -51,6 +48,28 @@ If the tracpad doesn't work during installation, please plug a wired mouse or a 
 
 1. Don't turn on `FileValue Encryption`！！！
 
+## Other Configurations (i5/1080P) note
+If you are using a 1080P screen, please notice：
+1. （not must）Use [xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi) to enable HiDPI；
+2. Use `Clover Configurator` to edit `CLOVER\Config.plist`, and delete all values in `Boot Graphics`, or use `Other Text Editor (Such as NotePad)` and delete the part as after shows：
+   ```
+   <key>BootGraphics</key>
+	<dict>
+		<key>EFILoginHiDPI</key>
+		<integer>2</integer>
+		<key>UIScale</key>
+		<integer>2</integer>
+		<key>flagstate</key>
+		<integer>1</integer>
+	</dict>
+   ```
+3. Use `Clover Configurator` to edit `CLOVER\Config.plist`, and change the `Theme` part to `Outlines1080` in `GUI` part,or use `Other Text Editor (Such as NotePad)` to replace `Outlines4K` to `Outlines1080` (or `Universe` If you want to use the old one);
+
+If you are **not** using i7-7700HQ，please notice：
+1. (**Must**)Please Insure you have already boot in your macOS normally；
+2. (**Must**)Delete `CLOVER\Kexts\Other\CPUFriendDataProvider.kext`;
+3. (**Must**)Use [stevezhengshiqi/one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend/blob/master/README_CN.md) to generate a new `CPUFriendDataProvider.kext` and place it in `CLOVER\Kexts\Other`;
+
 ## Work around
 
 #### 1. fix fuzzy font
@@ -63,21 +82,17 @@ $ defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 
 then reboot.
 
-#### 2. 1080P enable HIDPI
-
-[xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
-
-#### 3. Android USB Network Sharing
+#### 2. Android USB Network Sharing
 
 set `Post-install/HoRNDIS.kext` to `CLOVER/kexts/Other`
 
-#### 4. Unlock Root directory
+#### 3. Unlock Root directory
 
 ```
 sudo mount -uw /
 ```
 
-#### 5. macOS Minor Update Suggestions
+#### 4. macOS Minor Update Suggestions
 
 Rebuild kextcache after each macOS minor update, you can create a file named `rebuilt.command` containing the command `sudo kextcache -i /`. When an update is finished, you can directly run this file and input your password to rebuild kextcache. This can repair some minor issues such as `Brightness Control Failure` or `USB-C Device cannot work properly`.
 
@@ -93,4 +108,4 @@ Rebuild kextcache after each macOS minor update, you can create a file named `re
 
 ## Special Thanks to
 
-[RehabMan](https://github.com/RehabMan)、[Acidanthera](https://github.com/acidanthera)、[PMheart](https://github.com/PMheart)、[alexandred](https://github.com/alexandred)、[wmchris](https://github.com/wmchris)、[darkhandz](https://github.com/darkhandz)、[gunslinger23](https://github.com/gunslinger23)、[goodwin](https://github.com/goodwin) and so on.
+[Apple](https://www.apple.com)、[RehabMan](https://github.com/RehabMan)、[Acidanthera](https://github.com/acidanthera)、[PMheart](https://github.com/PMheart)、[alexandred](https://github.com/alexandred)、[wmchris](https://github.com/wmchris)、[darkhandz](https://github.com/darkhandz)、[gunslinger23](https://github.com/gunslinger23)、[goodwin](https://github.com/goodwin)、[blackosx](https://sourceforge.net/u/blackosx/profile/)[Badruzeus](https://sourceforge.net/u/badruzeus/profile/) and so on.
