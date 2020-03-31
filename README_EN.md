@@ -16,7 +16,7 @@ For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15
 
 1. Fix some Backlight level issues;
 2. Update all `Lilu` plugins to last version;
-3. Update `Clover` to 5107;
+3. Update `Clover` to 5108;
 4. Replace Clover Theme to `Outlines`;
 
 macOS `10.15.4` works properly in current configuration.

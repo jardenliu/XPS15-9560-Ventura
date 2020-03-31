@@ -18,8 +18,8 @@
    Fix some Backlight level issues;
 2. 更新`Lilu`系驱动至最新版;
    Update all `Lilu` plugins to last version;
-3. 更新`Clover`至5107;
-   Update `Clover` to 5107;
+1. 更新`Clover`至5108;
+   Update `Clover` to 5108;
 4. 替换内置主题为`Outlines`;
    Replace Clover Theme to `Outlines`;
 
