@@ -13,9 +13,12 @@
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
 
-### 内置驱动更新 2020-03-02
+### 内置驱动更新 2020-03-31
 
-1. 更新 `Lilu`系驱动至最新版 
+1. 修复部分亮度背光档位问题;
+2. 更新`Lilu`系驱动至最新版;
+3. 更新`Clover`至5107;
+4. 替换内置主题为`Outlines`;
 
 当前配置可在 macOS `10.15.4` 下正常运行。
 
@@ -73,21 +76,39 @@
 
 1. 不要开启`文件保险箱加密(FileValue)`，不要开启`文件保险箱加密(FileValue)`，不要开启`文件保险箱加密(FileValue)`！！！
 
+## 其他配置（i5/1080P）说明
+如果你是1080P用户，请注意以下几点：
+1. （非必须）使用[xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)项目提供的方式开启HiDPI；
+2. 使用`Clover Configurator`修改`CLOVER\Config.plist`中`启动背景`部分所有值删掉留空保存或者使用`其他文本编辑器（如记事本等）`删掉：
+   ```
+   <key>BootGraphics</key>
+	<dict>
+		<key>EFILoginHiDPI</key>
+		<integer>2</integer>
+		<key>UIScale</key>
+		<integer>2</integer>
+		<key>flagstate</key>
+		<integer>1</integer>
+	</dict>
+   ```
+3. 使用`Clover Configurator`修改`CLOVER\Config.plist`中`引导界面`部分`主题`部分填写`Outlines1080`或使用`其他文本编辑器（如记事本等）`将`Outlines4K`替换为`Outlines1080`；
+
+如果你是非i7用户，请注意以下几点：
+1. （必须）确保你现在已经安装好系统了；
+2. （必须）删除项目中`CLOVER\Kexts\Other\CPUFriendDataProvider.kext`;
+3. （必须）使用[stevezhengshiqi/one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend/blob/master/README_CN.md)提供的方式生成新的`CPUFriendDataProvider.kext`并放至`CLOVER\Kexts\Other`;
+
 ## 小问题处理方式
 
 #### 1. 字体细、发虚
 
 终端执行`defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`，注销再登录即可
 
-#### 2. 1080P 开启 HIDPI
-
-使用[xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
-
-#### 3. 安卓 USB 网络共享
+#### 2. 安卓 USB 网络共享
 
 把`Post-install`里面的`HoRNDIS.kext`放入`CLOVER/kexts/Other`
 
-#### 4. 解锁根目录
+#### 3. 解锁根目录
 
 ```
 sudo mount -uw /
@@ -104,7 +125,6 @@ sudo mount -uw /
 [SilentSliver](https://github.com/SilentSliver)
 
 ## 鸣谢
-
-[RehabMan](https://github.com/RehabMan)、[Acidanthera](https://github.com/acidanthera)、[PMheart](https://github.com/PMheart)、[alexandred](https://github.com/alexandred)、[wmchris](https://github.com/wmchris)、[darkhandz](https://github.com/darkhandz)、[gunslinger23](https://github.com/gunslinger23)、[goodwin](https://github.com/goodwin)等
+[Apple](https://www.apple.com)、[RehabMan](https://github.com/RehabMan)、[Acidanthera](https://github.com/acidanthera)、[PMheart](https://github.com/PMheart)、[alexandred](https://github.com/alexandred)、[wmchris](https://github.com/wmchris)、[darkhandz](https://github.com/darkhandz)、[gunslinger23](https://github.com/gunslinger23)、[goodwin](https://github.com/goodwin)、[blackosx](https://sourceforge.net/u/blackosx/profile/)[Badruzeus](https://sourceforge.net/u/badruzeus/profile/)等
 
 注：排名不分先后；如有遗漏，请勿见怪，感谢您的付出；
