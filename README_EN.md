@@ -4,15 +4,14 @@
 
  [中文](README.md) | [English](README_EN.md) 
 
-## Update log
+## Update log 2020-04-14
 
-### Main Version Update 2020-02-02
-
-1. Add OpenCore Branch
+1. Update `OpenCore` to 0.5.7;
+2. Update All `Kernel Extension` to the last version;
+3. Adjust Some `Hotpatch`;
+4. Add Theme from Acidanthera;
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
-
-### Integrated Drivers Update 
 
 ## Configuration
 
@@ -42,6 +41,25 @@ If the tracpad doesn't work during installation, please plug a wired mouse or a 
 ## Warning
 
 1. Don't turn on `FileValue Encryption`！！！
+2. Before using `OpenCore`, please make sure you have disabled `CFGlock`! If you don't disable `CFGLock`, you need change values of `AppleXcpmCfgLock` and `IgnoreInvalidFlexRatio` must be `True` or you will boot failure.
+
+## Other Configurations (CPU like i5 or others/1080P) note
+If you are using a 1080P screen, please notice：
+1. （not must）Use [xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi) to enable HiDPI；
+2. Use `ProperTree`或者`OpenCore Configurator` to edit `OC\Config.plist`, and change the `UIScale` part Value to `1`, or use `Other Text Editor (Such as NotePad)` and edit the `UIScale` part as after shows：
+   ```
+   <key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
+	<dict>
+		<key>UIScale</key>
+		<data>AQ==</data>
+	</dict>
+   ```
+3. Use `Clover Configurator` to edit `CLOVER\Config.plist`, and change the `Theme` part to `Outlines1080` in `GUI` part,or use `Other Text Editor (Such as NotePad)` to replace `Outlines4K` to `Outlines1080` (or `Universe` If you want to use the old one);
+
+If you are **not** using i7-7700HQ，please notice：
+1. (**Must**)Please Insure you have already boot in your macOS normally；
+2. (**Must**)Delete `OC\Kexts\Other\CPUFriendDataProvider.kext`;
+3. (**Must**)Use [stevezhengshiqi/one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend/blob/master/README_CN.md) to generate a new `CPUFriendDataProvider.kext` and place it in `OC\Kexts\Other`;
 
 ## Work around
 

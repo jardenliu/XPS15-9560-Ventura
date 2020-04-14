@@ -6,13 +6,14 @@
 
 ## 更新日志
 
-### 主要版本更新 2020-02-02
+### 上次更新 2020-04-14
 
-1. 添加OpenCore分支，提交OpenCore引导尝鲜版。
+1. 更新OpenCore至0.5.7；
+2. 更新所有`内核扩展`至最新版；
+3. 调整部分`Hotpatch`；
+4. 添加官方主题；
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
-
-### 内置驱动更新 暂无
 
 
 ## 配置
@@ -72,6 +73,25 @@
 ## 提示
 
 1. 不要开启`文件保险箱加密(FileValue)`，不要开启`文件保险箱加密(FileValue)`，不要开启`文件保险箱加密(FileValue)`！！！
+2. 使用OC前，请务必保证你已经解锁了`CFGlock`!如果你没有解锁`CFGLock`，则必须修改配置中`AppleXcpmCfgLock`以及`IgnoreInvalidFlexRatio`两项为`True`否则将启动失败。
+
+
+## 其他配置（i5等/1080P）说明
+如果你是1080P用户，请注意以下几点：
+1. （非必须）使用[xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)项目提供的方式开启HiDPI；
+2. 使用`ProperTree`或者`OpenCore Configurator`修改`OC\Config.plist`中`NVRAM\4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14`部分`UIScale`值设置为`1`或用`其他文本编辑器（如记事本等）`修改`UIScale`部分如下：
+   ```
+  <key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
+	<dict>
+		<key>UIScale</key>
+		<data>AQ==</data>
+	</dict>
+   ```
+
+如果你是非i7用户，请注意以下几点：
+1. （必须）确保你现在已经安装好系统了；
+2. （必须）删除项目中`OC\Kexts\Other\CPUFriendDataProvider.kext`;
+3. （必须）使用[stevezhengshiqi/one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend/blob/master/README_CN.md)提供的方式生成新的`CPUFriendDataProvider.kext`并放至`OC\Kexts\Other`;
 
 ## 小问题处理方式
 
@@ -79,15 +99,11 @@
 
 终端执行`defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`，注销再登录即可
 
-#### 2. 1080P 开启 HIDPI
-
-使用[xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
-
-#### 3. 安卓 USB 网络共享
+#### 2. 安卓 USB 网络共享
 
 把`Post-install`里面的`HoRNDIS.kext`放入`CLOVER/kexts/Other`
 
-#### 4. 解锁根目录
+#### 3. 解锁根目录
 
 ```
 sudo mount -uw /
