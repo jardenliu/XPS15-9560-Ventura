@@ -1,51 +1,9 @@
-// Add various missing devices in PCI0
-// Include EC, PMCR, DMAC, MCHC and SBUS
-// References:
-// [1] https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-SBUS-MCHC.dsl
-// [2] https://github.com/daliansky/OC-little/tree/master/08-%E6%B7%BB%E5%8A%A0%E4%B8%A2%E5%A4%B1%E7%9A%84%E9%83%A8%E4%BB%B6
-// [3] https://github.com/daliansky/OC-little/tree/master/05-SBUS(SMBU)%E8%A1%A5%E4%B8%81
-// [4] https://www.insanelymac.com/forum/topic/338516-opencore-discussion/?do=findComment&comment=2685513
+// PCI DeviceInject
 
-DefinitionBlock ("", "SSDT", 2, "hack", "PCI0", 0x00000000)
+DefinitionBlock ("", "SSDT", 2, "DXPS", "PCID", 0x00000000)
 {
-    External (_SB_.PCI0, DeviceObj)
+    // DMAC and PMCR
     External (_SB_.PCI0.LPCB, DeviceObj)
-    External (_SB_.PCI0.SBUS.BUS0, DeviceObj)
-
-    Scope (_SB.PCI0)
-    {
-        Device (MCHC)
-        {
-            Name (_ADR, Zero)  // _ADR: Address
-            Method (_STA, 0, NotSerialized)  // _STA: Status
-            {
-                If (_OSI ("Darwin"))
-                {
-                    Return (0x0F)
-                }
-                Else
-                {
-                    Return (Zero)
-                }
-            }
-        }
-
-        Device (PMCR)
-        {
-            Name (_ADR, 0x001F0002)  // _ADR: Address
-            Method (_STA, 0, NotSerialized)  // _STA: Status
-            {
-                If (_OSI ("Darwin"))
-                {
-                    Return (0x0F)
-                }
-                Else
-                {
-                    Return (Zero)
-                }
-            }
-        }
-    }
 
     Scope (_SB.PCI0.LPCB)
     {
@@ -81,8 +39,93 @@ DefinitionBlock ("", "SSDT", 2, "hack", "PCI0", 0x00000000)
                 DMA (Compatibility, NotBusMaster, Transfer8_16, )
                     {4}
             })
-            
-            Method (_STA, 0, NotSerialized)  // _STA: Status
+        }
+        Device (EC)
+        {
+            Name (_HID, "ACID0001")
+            Method (_STA, 0, NotSerialized)
+            {
+                If (_OSI ("Darwin"))
+                {
+                    Return (0x0F)
+                }
+                Else
+                {
+                    Return (Zero)
+                }
+            }
+        }
+        Device (PMCR)
+        {
+            Name (_HID, EisaId ("APP9876"))
+            Name (_CRS, ResourceTemplate ()
+            {
+                Memory32Fixed (ReadWrite,
+                    0xFE000000,
+                    0x00010000 
+                    )
+
+            })
+            Method (_STA, 0, NotSerialized)
+            {
+                If (_OSI ("Darwin"))
+                {
+                    Return (0x0B)
+                }
+                Else
+                {
+                    Return (Zero)
+                }
+            }
+        }
+    }
+
+    // MCHC
+    External (_SB_.PCI0, DeviceObj)
+    External (_SB_.PCI0.SBUS, DeviceObj)
+
+    Scope (_SB.PCI0)
+    {
+        Device (MCHC)
+        {
+            Name (_ADR, Zero)  // _ADR: Address
+            Method (_STA, 0, NotSerialized)
+            {
+                If (_OSI ("Darwin"))
+                {
+                    Return (0x0F)
+                }
+                Return (Zero)
+            }
+        }
+        Scope (SBUS)
+        {
+        Device (BUS0)
+        {
+            Name (_CID, "smbus")
+            Name (_ADR, Zero)
+            Device (DVL0)
+            {
+                Name (_ADR, 0x57)
+                Name (_CID, "diagsvault")
+                Method (_DSM, 4, NotSerialized)
+                {
+                    If (!Arg2)
+                    {
+                        Return (Buffer (One)
+                        {
+                             0x03
+                        })
+                    }
+
+                    Return (Package (0x02)
+                    {
+                        "address", 
+                        0x57
+                    })
+                }
+            }
+            Method (_STA, 0, NotSerialized)
             {
                 If (_OSI ("Darwin"))
                 {
@@ -95,44 +138,6 @@ DefinitionBlock ("", "SSDT", 2, "hack", "PCI0", 0x00000000)
             }
         }
     }
-
-    Device (_SB.PCI0.SBUS.BUS0)
-    {
-        Name (_CID, "smbus")  // _CID: Compatible ID
-        Name (_ADR, Zero)  // _ADR: Address
-        Device (DVL0)
-        {
-            Name (_ADR, 0x57)  // _ADR: Address
-            Name (_CID, "diagsvault")  // _CID: Compatible ID
-            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-            {
-                If (!Arg2)
-                {
-                    Return (Buffer (One)
-                    {
-                         0x57                                             // W
-                    })
-                }
-
-                Return (Package (0x02)
-                {
-                    "address", 
-                    0x57
-                })
-            }
-        }
-        
-        Method (_STA, 0, NotSerialized)  // _STA: Status
-        {
-            If (_OSI ("Darwin"))
-            {
-                Return (0x0F)
-            }
-            Else
-            {
-                Return (Zero)
-            }
-        }
     }
 }
 

@@ -1,43 +1,79 @@
-// Disable Some Device on bootup
-// Reference:
-// [1] https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/hotpatch/SSDT-DDGPU.dsl
-
-DefinitionBlock ("", "SSDT", 2, "hack", "RMDC", 0x00000000)
+// Remove Some Device Table
+// Remove NVIDIA GPU and Realtek SD Card 
+// Rename In Config:
+// _STA to XSTA in RP02
+// Find: 30325058 53585B80 52505858 02000A30 5B811352 50585800 56444944 
+//       20004015 53534944 105B8046 4C445202 0A440A06 5B811046 4C445201
+//       44434150 20444354 52100853 504C5812 39040012 11030C00 0000800C
+//       00000080 0C000000 80121103 0C000000 800C0000 00800C00 00008012 
+//       11030C00 0000800C 00000080 0C000000 80144604 49535749 08085F54 
+//       5F3000A0 345B1253 53494400 A22B0170 99535349 44005F54 5F30A00A 
+//       935F545F 300A50A4 01A111A0 0B935F54 5F300B50 01A401A1 03A400A5 
+//       A103A400 0853504C 57122B05 00120A03 0A070BD0 070B3075 1208030A 
+//       10000B30 75120803 0A14000B 3075120A 030A090B A00F0B30 7514450A 
+//       53504C43 0870444F 4D318883 8853504C 58010000 00704C49 4D318883 
+//       8853504C 58010001 00705449 4D318883 8853504C 5801000A 02007044 
+//       4F4D3288 83885350 4C580A02 00000070 4C494D32 88838853 504C580A 
+//       02000100 7054494D 32888388 53504C58 0A02000A 02007044 4F4D3388 
+//       83885350 4C580A03 00000070 4C494D33 88838853 504C580A 03000100 
+//       7054494D 33888388 53504C58 0A03000A 0200A453 504C585B 84410857 
+//       52535405 00001417 5F
+// Replace: 30325058 53585B80 52505858 02000A30 5B811352 50585800 56444944
+//          20004015 53534944 105B8046 4C445202 0A440A06 5B811046 4C445201 
+//          44434150 20444354 52100853 504C5812 39040012 11030C00 0000800C 
+//          00000080 0C000000 80121103 0C000000 800C0000 00800C00 00008012 
+//          11030C00 0000800C 00000080 0C000000 80144604 49535749 08085F54 
+//          5F3000A0 345B1253 53494400 A22B0170 99535349 44005F54 5F30A00A 
+//          935F545F 300A50A4 01A111A0 0B935F54 5F300B50 01A401A1 03A400A5 
+//          A103A400 0853504C 57122B05 00120A03 0A070BD0 070B3075 1208030A 
+//          10000B30 75120803 0A14000B 3075120A 030A090B A00F0B30 7514450A 
+//          53504C43 0870444F 4D318883 8853504C 58010000 00704C49 4D318883 
+//          8853504C 58010001 00705449 4D318883 8853504C 5801000A 02007044 
+//          4F4D3288 83885350 4C580A02 00000070 4C494D32 88838853 504C580A 
+//          02000100 7054494D 32888388 53504C58 0A02000A 02007044 4F4D3388 
+//          83885350 4C580A03 00000070 4C494D33 88838853 504C580A 03000100 
+//          7054494D 33888388 53504C58 0A03000A 0200A453 504C585B 84410857 
+//          52535405 00001417 58
+//
+DefinitionBlock ("", "SSDT", 2, "DXPS", "RMDC", 0)
 {
-    External (_SB_.PCI0.PEG0.PEGP._OFF, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.I2C0, DeviceObj)
+    External (_SB_.PCI0.PEG0.PEGP._OFF, MethodObj)
     External (_SB_.PCI0.RP02, DeviceObj)
+    External (_SB_.PCI0.RP02.PXSX._OFF, MethodObj)
     External (_SB_.PCI0.RP02.PXSX.XSTA, MethodObj)
-    External (_SB_.PCI0.I2C0, DeviceObj)  
-    External (_SB_.PCI0.I2C0.XSTA, MethodObj) 
-    External (_SB_.PCI0.RP02.PXSX._OFF, MethodObj) 
-    External (ZWAK, MethodObj)
-    // disable dGPU on bootup[1]
     
-    Method (DGPU, 0, NotSerialized){
-        If ((_OSI ("Darwin")) && (CondRefOf (\_SB.PCI0.PEG0.PEGP._OFF)))
-            {
-                \_SB.PCI0.PEG0.PEGP._OFF ()
-            }
+    // Disable Nvidia GPU
+    Method (DGPU, 0)
+    {
+        If ((_OSI ("Darwin") && CondRefOf (\_SB.PCI0.PEG0.PEGP._OFF)))
+        {
+            \_SB.PCI0.PEG0.PEGP._OFF ()
+        }
     }
-    
-    // disable ExpressCard on bootup
-    Method (DXPC, 0, NotSerialized){
-         If ((_OSI ("Darwin")) && (CondRefOf (\_SB.PCI0.RP02.PXSX._OFF)))
-            {
-                \_SB.PCI0.RP02.PXSX._OFF ()
-            }
+    // Diable SD Card
+    Method (DXPC, 0)
+    {
+        If ((_OSI ("Darwin") && CondRefOf (\_SB.PCI0.RP02.PXSX._OFF)))
+        {
+            \_SB.PCI0.RP02.PXSX._OFF ()
+        }
     }
-    
+    // Abstract a New Device and Disable Devices when intilize the new one
     Device (RMDC)
     {
         Name (_HID, "RMD10000")  // _HID: Hardware ID
         Method (_INI, 0, NotSerialized)  // _INI: Initialize
         {
-            DGPU ()
-            DXPC ()
+            If (_OSI ("Darwin"))
+            {
+                DGPU ()
+                DXPC ()
+            }
         }
     }
-
+    
+    // Ensure Disable SDCard
     Scope (_SB.PCI0.RP02)
     {
         Method (_STA, 0, NotSerialized)  // _STA: Status
@@ -46,10 +82,7 @@ DefinitionBlock ("", "SSDT", 2, "hack", "RMDC", 0x00000000)
             {
                 Return (Zero)
             }
-            Else
-            {
-                Return (\_SB.PCI0.RP02.PXSX.XSTA ())
-            }
+            Return (\_SB.PCI0.RP02.PXSX.XSTA ())
         }
     }
 }

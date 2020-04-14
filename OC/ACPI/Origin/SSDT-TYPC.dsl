@@ -1,50 +1,32 @@
-// Type-C hotplug
-// Patch: Rename RP15.PXSX._RMV to XRMV
-// Find: X1JNVgCkABQGX1BTMAAUSwVfUFMzAHJNTVRCC0gFYFuAUFhWRABgCghbgRBQWFZEA1RCMlAgUDJUQiCgLpCTVEJUUwGTU0JOUlRCVVNBREJHDXNlbmRpbmcgU1hfU1RBUlQAcAodUDJUQhQtSFBNRQigJpCSk1ZESUQM
-// Replace: WFJNVgCkABQGX1BTMAAUSwVfUFMzAHJNTVRCC0gFYFuAUFhWRABgCghbgRBQWFZEA1RCMlAgUDJUQiCgLpCTVEJUUwGTU0JOUlRCVVNBREJHDXNlbmRpbmcgU1hfU1RBUlQAcAodUDJUQhQtSFBNRQigJpCSk1ZESUQM
-// References:
-// [1] https://www.insanelymac.com/forum/topic/324366-dell-xps-15-9560-4k-touch-1tb-ssd-32gb-ram-100-adobergb%E2%80%8B/
-// [2] https://www.tonymacx86.com/threads/usb-c-hotplug-questions.211313/
-// [3] https://github.com/the-darkvoid/XPS9360-macOS/issues/118
+//
+// USB Type-C Hotplug Fix
 
-DefinitionBlock ("", "SSDT", 2, "hack", "TYPC", 0x00000000)
+DefinitionBlock ("", "SSDT", 2, "DXPS", "TYPC", 0x00000000)
 {
     External (_SB_.PCI0.RP15.PXSX, DeviceObj)
-    External (_GPE.XTBX, MethodObj)
+    External (_SB_.PCI0.RP15.PXSX.XRMV, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP15.PXSX.XSTA, MethodObj)    // 0 Arguments
 
-    // turn off warning that will cause sleep failure[2]
-    Scope (\_GPE)
+    Scope (_SB.PCI0.RP15.PXSX)
     {
-        Method (XTBT, 2, NotSerialized)
-        {
-            If (_OSI ("Darwin"))
-            {            Return (Zero)
-                }
-            Else
-            {
-                Return (\_GPE.XTBX ())
-            }
-        }
-        Method (YTBT, 2, NotSerialized)
-        {
-            Return (Zero)
-        }
-    }
-
-    Scope (\_SB.PCI0.RP15.PXSX)
-    {
-        // key method to make type-c removable
         Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
         {
             If (_OSI ("Darwin"))
             {
-                Return (One)
+                Return (1)
             }
-            Else
+
+            Return (\_SB.PCI0.RP15.PXSX.XRMV ())
+        }
+
+        Method (_STA, 0, NotSerialized)  // _STA: Status
+        {
+            If (_OSI ("Darwin"))
             {
-                Return (Zero)
+                Return (15)
             }
+
+            Return (\_SB.PCI0.RP15.PXSX.XSTA ())
         }
     }
 }
-
