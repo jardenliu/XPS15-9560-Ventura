@@ -87,25 +87,11 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>OemTableId</key>
 				<data></data>
 				<key>TableLength</key>
 				<integer>2956</integer>
-				<key>TableSignature</key>
-				<data>U1NEVA==</data>
-			</dict>
-			<dict>
-				<key>All</key>
-				<false/>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<false/>
-				<key>OemTableId</key>
-				<data></data>
-				<key>TableLength</key>
-				<integer>12290</integer>
 				<key>TableSignature</key>
 				<data>U1NEVA==</data>
 			</dict>
@@ -136,6 +122,32 @@
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
+				<data></data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>_INI to XINI in PCI0</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>X0lOSQ==</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data></data>
+				<key>Replace</key>
+				<data>WElOSQ==</data>
+				<key>ReplaceMask</key>
+				<data></data>
+				<key>Skip</key>
+				<integer>36</integer>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>TableSignature</key>
 				<data>RFNEVA==</data>
 			</dict>
 			<dict>
@@ -144,7 +156,7 @@
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>X09TSQ==</data>
 				<key>Limit</key>
@@ -168,7 +180,7 @@
 				<key>Comment</key>
 				<string>_PTS to ZPTS (Sleep Issus Fix with SSDT-SLP5.aml)</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
@@ -194,7 +206,7 @@
 				<key>Comment</key>
 				<string>_WAK to ZWAK (Sleep Issus Fix with SSDT-SLP5.aml)</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
@@ -220,7 +232,7 @@
 				<key>Comment</key>
 				<string>BRT6 to BRTX (Fix Bright Function Key with SSDT-BRT6.aml)</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
@@ -252,7 +264,7 @@
 				<key>Find</key>
 				<data>X1NUQQ==</data>
 				<key>Limit</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Mask</key>
 				<data></data>
 				<key>OemTableId</key>
@@ -278,7 +290,7 @@
 				<key>Find</key>
 				<data>X0NSUw==</data>
 				<key>Limit</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Mask</key>
 				<data></data>
 				<key>OemTableId</key>
@@ -298,7 +310,7 @@
 				<key>Comment</key>
 				<string>_LID to XLID (Sleep Issus Fix with SSDT-SLP5.aml)</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
@@ -324,13 +336,13 @@
 				<key>Comment</key>
 				<string>BTNV to XTNV(Sleep Function Key Fix with SSDT-SLP5.aml)</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
 				<data>QlROVgI=</data>
 				<key>Limit</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Mask</key>
 				<data></data>
 				<key>OemTableId</key>
@@ -350,13 +362,13 @@
 				<key>Comment</key>
 				<string>GPRW to XPRW (Sleep Issus Fix with SSDT-SLP5.aml)</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
 				<data>R1BSVwI=</data>
 				<key>Limit</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Mask</key>
 				<data></data>
 				<key>OemTableId</key>
@@ -376,11 +388,11 @@
 				<key>Comment</key>
 				<string>_RMV to XRMV in RP15.PXSX (USB-C Hotplug Fix with SSDT-TYPC.aml)</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>MTVQWFNYW4BSUFhYAgAKMFuBE1JQWFgAVkRJRCAAQBVTU0lEEFuARkxEUgIKRAoGW4EQRkxEUgFEQ0FQIERDVFIQCFNQTFgSOQQAEhEDDAAAAIAMAAAAgAwAAACAEhEDDAAAAIAMAAAAgAwAAACAEhEDDAAAAIAMAAAAgAwAAACAFEYESVNXSQgIX1RfMACgNFsSU1NJRACiKwFwmVNTSUQAX1RfMKAKk19UXzAKUKQBoRGgC5NfVF8wC1ABpAGhA6QApaEDpAAIU1BMVxIrBQASCgMKBwvQBwswdRIIAwoQAAswdRIIAwoUAAswdRIKAwoJC6APCzB1FEUKU1BMQwhwRE9NMYiDiFNQTFgBAAAAcExJTTGIg4hTUExYAQABAHBUSU0xiIOIU1BMWAEACgIAcERPTTKIg4hTUExYCgIAAABwTElNMoiDiFNQTFgKAgABAHBUSU0yiIOIU1BMWAoCAAoCAHBET00ziIOIU1BMWAoDAAAAcExJTTOIg4hTUExYCgMAAQBwVElNM4iDiFNQTFgKAwAKAgCkU1BMWFuEQQhXUlNUBQAAFBdf</data>
+				<data>X1JNVgCgFpCTVEJUUwGTU0JOUlRCVVOkVEFSU6EGpEhQQ0UULUhQTUUIoCaQkpNWRElEDP////+TUE1TWAGGUFhTWAoCcAFQTVNYcAFQU1BYFCpfSU5JAHBMVFIxTFRSWnBQTUwxTE1TTHBQTkwxTE5TTHBPQkYxT0JGWhQPX1BSVwCkR1BSVwppCgQUFl9QUlQAoApQSUNNpEFSMTKkUFIxMluCRztSUDE2</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
@@ -388,7 +400,7 @@
 				<key>OemTableId</key>
 				<data></data>
 				<key>Replace</key>
-				<data>MTVQWFNYW4BSUFhYAgAKMFuBE1JQWFgAVkRJRCAAQBVTU0lEEFuARkxEUgIKRAoGW4EQRkxEUgFEQ0FQIERDVFIQCFNQTFgSOQQAEhEDDAAAAIAMAAAAgAwAAACAEhEDDAAAAIAMAAAAgAwAAACAEhEDDAAAAIAMAAAAgAwAAACAFEYESVNXSQgIX1RfMACgNFsSU1NJRACiKwFwmVNTSUQAX1RfMKAKk19UXzAKUKQBoRGgC5NfVF8wC1ABpAGhA6QApaEDpAAIU1BMVxIrBQASCgMKBwvQBwswdRIIAwoQAAswdRIIAwoUAAswdRIKAwoJC6APCzB1FEUKU1BMQwhwRE9NMYiDiFNQTFgBAAAAcExJTTGIg4hTUExYAQABAHBUSU0xiIOIU1BMWAEACgIAcERPTTKIg4hTUExYCgIAAABwTElNMoiDiFNQTFgKAgABAHBUSU0yiIOIU1BMWAoCAAoCAHBET00ziIOIU1BMWAoDAAAAcExJTTOIg4hTUExYCgMAAQBwVElNM4iDiFNQTFgKAwAKAgCkU1BMWFuEQQhXUlNUBQAAFBdY</data>
+				<data>WFJNVgCgFpCTVEJUUwGTU0JOUlRCVVOkVEFSU6EGpEhQQ0UULUhQTUUIoCaQkpNWRElEDP////+TUE1TWAGGUFhTWAoCcAFQTVNYcAFQU1BYFCpfSU5JAHBMVFIxTFRSWnBQTUwxTE1TTHBQTkwxTE5TTHBPQkYxT0JGWhQPX1BSVwCkR1BSVwppCgQUFl9QUlQAoApQSUNNpEFSMTKkUFIxMluCRztSUDE2</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>
@@ -402,7 +414,7 @@
 				<key>Comment</key>
 				<string>_STA to XSTA in RP02.PXSX (Disable SDCard in macOS)</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
@@ -476,7 +488,7 @@
 			<key>SignalAppleOS</key>
 			<false/>
 			<key>SyncRuntimePermissions</key>
-			<true/>
+			<false/>
 		</dict>
 	</dict>
 	<key>DeviceProperties</key>
@@ -1046,32 +1058,7 @@
 			</dict>
 		</array>
 		<key>Block</key>
-		<array>
-			<dict>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>Identifier</key>
-				<string>com.apple.driver.AppleIntelLpssI2C</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>Identifier</key>
-				<string>com.apple.driver.AppleIntelLpssI2CController</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-			</dict>
-		</array>
+		<array/>
 		<key>Emulate</key>
 		<dict>
 			<key>Cpuid1Data</key>
@@ -1080,7 +1067,64 @@
 			<data></data>
 		</dict>
 		<key>Patch</key>
-		<array/>
+		<array>
+			<dict>
+				<key>Base</key>
+				<string></string>
+				<key>Comment</key>
+				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
+				<key>Count</key>
+				<integer>0</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>SU9LaXQ=</data>
+				<key>Identifier</key>
+				<string>com.apple.driver.AppleIntelLpssI2C</string>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>Replace</key>
+				<data>SU9LaXM=</data>
+				<key>ReplaceMask</key>
+				<data></data>
+				<key>Skip</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Base</key>
+				<string></string>
+				<key>Comment</key>
+				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
+				<key>Count</key>
+				<integer>0</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>SU9LaXQ=</data>
+				<key>Identifier</key>
+				<string>com.apple.driver.AppleIntelLpssI2CController</string>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>Replace</key>
+				<data>SU9LaXM=</data>
+				<key>ReplaceMask</key>
+				<data></data>
+				<key>Skip</key>
+				<integer>0</integer>
+			</dict>
+		</array>
 		<key>Quirks</key>
 		<dict>
 			<key>AppleCpuPmCfgLock</key>
@@ -1363,11 +1407,11 @@
 			<key>AudioOut</key>
 			<integer>23</integer>
 			<key>AudioSupport</key>
-			<true/>
+			<false/>
 			<key>MinimumVolume</key>
 			<integer>10</integer>
 			<key>PlayChime</key>
-			<true/>
+			<false/>
 			<key>VolumeAmplifier</key>
 			<integer>0</integer>
 		</dict>
@@ -1377,7 +1421,6 @@
 		<array>
 			<string>HFSPlus.efi</string>
 			<string>ApfsDriverLoader.efi</string>
-			<string>AudioDxe.efi</string>
 			<string>OpenRuntime.efi</string>
 			<string>OpenCanopy.efi</string>
 		</array>
@@ -1465,7 +1508,7 @@
 			<key>IgnoreInvalidFlexRatio</key>
 			<false/>
 			<key>ReleaseUsbOwnership</key>
-			<true/>
+			<false/>
 			<key>RequestBootVarFallback</key>
 			<true/>
 			<key>RequestBootVarRouting</key>
