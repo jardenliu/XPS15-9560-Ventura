@@ -27,8 +27,8 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "SLP5", 0)
     External (_SB_, DeviceObj)
     External (_SB_.LID0, DeviceObj)
     External (_SB_.LID0.XLID, MethodObj)
-    External (_SB_.PCI0.PEG0.PEGP._OFF, MethodObj)
-    External (_SB_.PCI0.PEG0.PEGP._ON_, MethodObj)
+    External (RMDC.DGOF, MethodObj)
+    External (RMDC.DGON, MethodObj)
     External (_SB_.XTNV, MethodObj)
     External (WAKL, MethodObj)
     External (XPRW, MethodObj)
@@ -147,7 +147,7 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "SLP5", 0)
                 Arg0 = 3
             }
 
-            \_SB.PCI0.PEG0.PEGP._ON ()
+            \RMDC.DGON ()
         }
 
         ZPTS (Arg0)
@@ -163,7 +163,7 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "SLP5", 0)
                 Arg0 = 3
             }
 
-            \_SB.PCI0.PEG0.PEGP._OFF ()
+            \RMDC.DGOF ()
             WAKL (Arg0)
         }
 
@@ -174,30 +174,30 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "SLP5", 0)
     If ((\SLPC.DIDE == 1))
     {
 
-    Scope (\_SB)
-    {
-        Method (LPS0, 0)
+        Scope (\_SB)
         {
-            Return (1)
+            Method (LPS0, 0)
+            {
+                Return (1)
+            }
         }
-    }
 
-    Scope (\_GPE)
-    {
-        Method (LXEN, 0)
+        Scope (\_GPE)
         {
-            Return (1)
+            Method (LXEN, 0)
+            {
+                Return (1)
+            }
         }
-    }
 
-    Scope (\)
-    {
-        Name (SLTP, 0)
-        Method (_TTS, 1)  // _TTS: Transition To State
+        Scope (\)
         {
-            SLTP = Arg0
+            Name (SLTP, 0)
+            Method (_TTS, 1)  // _TTS: Transition To State
+            {
+                SLTP = Arg0
+            }
         }
-    }
     }
 }
 

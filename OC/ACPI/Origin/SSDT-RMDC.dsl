@@ -37,38 +37,47 @@
 //
 DefinitionBlock ("", "SSDT", 2, "DXPS", "RMDC", 0)
 {
-    External (_SB_.PCI0.I2C0, DeviceObj)
     External (_SB_.PCI0.PEG0.PEGP._OFF, MethodObj)
+    External (_SB_.PCI0.PEG0.PEGP._ON, MethodObj)
     External (_SB_.PCI0.RP02, DeviceObj)
     External (_SB_.PCI0.RP02.PXSX._OFF, MethodObj)
     External (_SB_.PCI0.RP02.PXSX.XSTA, MethodObj)
     
-    // Disable Nvidia GPU
-    Method (DGPU, 0)
-    {
-        If ((_OSI ("Darwin") && CondRefOf (\_SB.PCI0.PEG0.PEGP._OFF)))
-        {
-            \_SB.PCI0.PEG0.PEGP._OFF ()
-        }
-    }
-    // Diable SD Card
-    Method (DXPC, 0)
-    {
-        If ((_OSI ("Darwin") && CondRefOf (\_SB.PCI0.RP02.PXSX._OFF)))
-        {
-            \_SB.PCI0.RP02.PXSX._OFF ()
-        }
-    }
     // Abstract a New Device and Disable Devices when intilize the new one
-    Device (RMDC)
+    If (_OSI ("Darwin"))
     {
-        Name (_HID, "RMD10000")  // _HID: Hardware ID
-        Method (_INI, 0, NotSerialized)  // _INI: Initialize
+        Device (RMDC)
         {
-            If (_OSI ("Darwin"))
+            Name (_HID, "RMD10000")  // _HID: Hardware ID
+            Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                DGPU ()
-                DXPC ()
+            
+                DGOF ()
+                SDOF ()
+            }
+            // Disable Nvidia GPU
+            Method (DGOF, 0)
+            {
+                If ((_OSI ("Darwin") && CondRefOf (\_SB.PCI0.PEG0.PEGP._OFF)))
+                {
+                    \_SB.PCI0.PEG0.PEGP._OFF ()
+                }
+            }
+            // Enable Nvidia GPU
+            Method (DGON, 0)
+            {
+                If ((_OSI ("Darwin") && CondRefOf (\_SB.PCI0.PEG0.PEGP._ON)))
+                {
+                    \_SB.PCI0.PEG0.PEGP._ON ()
+                }
+            }
+            // Diable SD Card
+            Method (SDOF, 0)
+            {
+                If ((_OSI ("Darwin") && CondRefOf (\_SB.PCI0.RP02.PXSX._OFF)))
+                {
+                    \_SB.PCI0.RP02.PXSX._OFF ()
+                }
             }
         }
     }
