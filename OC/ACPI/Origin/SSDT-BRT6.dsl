@@ -44,23 +44,21 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "BRT6", 0)
     }
 
     //Inject PNLF to Control Backlight
-    Scope (_SB)
+    If (_OSI ("Darwin"))
     {
-        Device (PNLF)
+        Scope (_SB)
         {
-            Name(_ADR, Zero)
-            Name (_HID, EisaId ("APP0002"))  // _HID: Hardware ID
-            Name (_CID, "backlight")  // _CID: Compatible ID
-            Name (_UID, 0x10)  // _UID: Unique ID
-            Method (_STA, 0)  // _STA: Status
+            Device (PNLF)
             {
-                If (_OSI ("Darwin"))
+                Name(_ADR, Zero)
+                Name (_HID, EisaId ("APP0002"))  // _HID: Hardware ID
+                Name (_CID, "backlight")  // _CID: Compatible ID
+                Name (_UID, 0x10)  // _UID: Unique ID
+                Method (_STA, 0)  // _STA: Status
                 {
                     Return (0x0B)
                 }
-                Return (0)
             }
         }
     }
 }
-

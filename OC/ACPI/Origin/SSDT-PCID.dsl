@@ -3,141 +3,116 @@
 DefinitionBlock ("", "SSDT", 2, "DXPS", "PCID", 0x00000000)
 {
     // DMAC and PMCR
+    External (_SB_.PCI0, DeviceObj)
+    External (_SB_.PCI0.SBUS, DeviceObj)
     External (_SB_.PCI0.LPCB, DeviceObj)
-
-    Scope (_SB.PCI0.LPCB)
+    
+    If (_OSI ("Darwin"))
     {
-        Device (DMAC)
+        Scope (_SB.PCI0.LPCB)
         {
-            Name (_HID, EisaId ("PNP0200") /* PC-class DMA Controller */)  // _HID: Hardware ID
-            Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+            Device (DMAC)
             {
-                IO (Decode16,
-                    0x0000,             // Range Minimum
-                    0x0000,             // Range Maximum
-                    0x01,               // Alignment
-                    0x20,               // Length
-                    )
-                IO (Decode16,
-                    0x0081,             // Range Minimum
-                    0x0081,             // Range Maximum
-                    0x01,               // Alignment
-                    0x11,               // Length
-                    )
-                IO (Decode16,
-                    0x0093,             // Range Minimum
-                    0x0093,             // Range Maximum
-                    0x01,               // Alignment
-                    0x0D,               // Length
-                    )
-                IO (Decode16,
-                    0x00C0,             // Range Minimum
-                    0x00C0,             // Range Maximum
-                    0x01,               // Alignment
-                    0x20,               // Length
-                    )
-                DMA (Compatibility, NotBusMaster, Transfer8_16, )
-                    {4}
-            })
-        }
-        Device (EC)
-        {
-            Name (_HID, "ACID0001")
-            Method (_STA, 0, NotSerialized)
+                Name (_HID, EisaId ("PNP0200") /* PC-class DMA Controller */)  // _HID: Hardware ID
+                Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+                {
+                    IO (Decode16,
+                        0x0000,             // Range Minimum
+                        0x0000,             // Range Maximum
+                        0x01,               // Alignment
+                        0x20,               // Length
+                        )
+                    IO (Decode16,
+                        0x0081,             // Range Minimum
+                        0x0081,             // Range Maximum
+                        0x01,               // Alignment
+                        0x11,               // Length
+                        )
+                    IO (Decode16,
+                        0x0093,             // Range Minimum
+                        0x0093,             // Range Maximum
+                        0x01,               // Alignment
+                        0x0D,               // Length
+                        )
+                    IO (Decode16,
+                        0x00C0,             // Range Minimum
+                        0x00C0,             // Range Maximum
+                        0x01,               // Alignment
+                        0x20,               // Length
+                        )
+                    DMA (Compatibility, NotBusMaster, Transfer8_16, )
+                        {4}
+                })
+            }
+            Device (EC)
             {
-                If (_OSI ("Darwin"))
+                Name (_HID, "ACID0001")
+                Method (_STA, 0, NotSerialized)
                 {
                     Return (0x0F)
                 }
-                Else
-                {
-                    Return (Zero)
-                }
             }
-        }
-        Device (PMCR)
-        {
-            Name (_HID, EisaId ("APP9876"))
-            Name (_CRS, ResourceTemplate ()
+            Device (PMCR)
             {
-                Memory32Fixed (ReadWrite,
-                    0xFE000000,
-                    0x00010000 
-                    )
+                Name (_HID, EisaId ("APP9876"))
+                Name (_CRS, ResourceTemplate ()
+                {
+                    Memory32Fixed (ReadWrite,
+                        0xFE000000,
+                        0x00010000 
+                        )
 
-            })
-            Method (_STA, 0, NotSerialized)
-            {
-                If (_OSI ("Darwin"))
+                })
+                Method (_STA, 0, NotSerialized)
                 {
                     Return (0x0B)
                 }
-                Else
-                {
-                    Return (Zero)
-                }
             }
         }
-    }
 
-    // MCHC
-    External (_SB_.PCI0, DeviceObj)
-    External (_SB_.PCI0.SBUS, DeviceObj)
-
-    Scope (_SB.PCI0)
-    {
-        Device (MCHC)
+        Scope (_SB.PCI0)
         {
-            Name (_ADR, Zero)  // _ADR: Address
-            Method (_STA, 0, NotSerialized)
+            Device (MCHC)
             {
-                If (_OSI ("Darwin"))
+                Name (_ADR, Zero)  // _ADR: Address
+                Method (_STA, 0, NotSerialized)
                 {
                     Return (0x0F)
                 }
-                Return (Zero)
             }
-        }
-        Scope (SBUS)
-        {
-        Device (BUS0)
-        {
-            Name (_CID, "smbus")
-            Name (_ADR, Zero)
-            Device (DVL0)
+            Scope (SBUS)
             {
-                Name (_ADR, 0x57)
-                Name (_CID, "diagsvault")
-                Method (_DSM, 4, NotSerialized)
+                Device (BUS0)
                 {
-                    If (!Arg2)
+                    Name (_CID, "smbus")
+                    Name (_ADR, Zero)
+                    Device (DVL0)
                     {
-                        Return (Buffer (One)
+                        Name (_ADR, 0x57)
+                        Name (_CID, "diagsvault")
+                        Method (_DSM, 4, NotSerialized)
                         {
-                             0x03
-                        })
+                            If (!Arg2)
+                            {
+                                Return (Buffer (One)
+                                {
+                                     0x03
+                                })
+                            }
+                            Return (Package (0x02)
+                            {
+                                "address", 
+                                0x57
+                            })
+                        }
                     }
-
-                    Return (Package (0x02)
+                    Method (_STA, 0, NotSerialized)
                     {
-                        "address", 
-                        0x57
-                    })
-                }
-            }
-            Method (_STA, 0, NotSerialized)
-            {
-                If (_OSI ("Darwin"))
-                {
-                    Return (0x0F)
-                }
-                Else
-                {
-                    Return (Zero)
+                        Return (0x0F)
+                    }
                 }
             }
         }
-    }
     }
 }
 
