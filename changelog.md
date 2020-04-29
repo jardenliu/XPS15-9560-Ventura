@@ -10,7 +10,14 @@
 1. 支持 10.15 正式版
    Support 10.15
 
-## 内置驱动更新 Integrated Kexts And EFI Update log
+## 内核扩展、引导等更新 Integrated Kexts, EFI and so on Update log
+
+### 2020-04-29
+
+1. 更新`VoodooI2C`至 2.4.2
+   Update `VoodoI2C` to `2.4.2`
+1. 更新`Clover`至5114;
+   Update `Clover` to 5114;
 
 ### 2020-03-31
 

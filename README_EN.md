@@ -12,12 +12,10 @@
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
-### Integrated Drivers Update 2020-03-31
+### Integrated Kexts, EFI and so on Update 2020-04-29
 
-1. Fix some Backlight level issues;
-2. Update all `Lilu` plugins to last version;
-3. Update `Clover` to 5108;
-4. Replace Clover Theme to `Outlines`;
+1. Update `VoodoI2C` to `2.4.2`
+2. Update `Clover` to 5114;
 
 macOS `10.15.4` works properly in current configuration.
 
