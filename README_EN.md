@@ -4,14 +4,11 @@
 
  [中文](README.md) | [English](README_EN.md) 
 
-## Update log 2020-04-14
+## Integrated Kexts, EFI and so on Update log 2020-04-29
 
-1. Update `OpenCore` to 0.5.7;
-2. Update All `Kernel Extension` to the last version;
-3. Adjust Some `Hotpatch`;
-4. Add Theme from Acidanthera;
+1. Update `VoodooI2C` to 2.4.2
 
-For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
+For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/OpenCore/changelog.md)
 
 ## Configuration
 
