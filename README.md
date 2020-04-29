@@ -6,14 +6,11 @@
 
 ## 更新日志
 
-### 上次更新 2020-04-14
+### 上次更新 2020-04-29
 
-1. 更新OpenCore至0.5.7；
-2. 更新所有`内核扩展`至最新版；
-3. 调整部分`Hotpatch`；
-4. 添加官方主题；
+1. 更新`VoodooI2C`至 2.4.2；
 
-更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
+更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/OpenCore/changelog.md)
 
 
 ## 配置
