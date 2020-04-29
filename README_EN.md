@@ -4,7 +4,7 @@
 
  [中文](README.md) | [English](README_EN.md) 
 
-## Update log 2020-04-29
+## Integrated Kexts, EFI and so on Update log 2020-04-29
 
 1. Update `VoodooI2C` to 2.4.2
 
