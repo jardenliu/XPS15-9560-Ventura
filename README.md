@@ -13,12 +13,10 @@
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
 
-### 内置驱动更新 2020-03-31
+### 内核扩展、引导等更新 2020-03-31
 
-1. 修复部分亮度背光档位问题;
-2. 更新`Lilu`系驱动至最新版;
-3. 更新`Clover`至5108;
-4. 替换内置主题为`Outlines`;
+1. 更新`VoodooI2C`至 2.4.2;
+2. 更新`Clover`至5114;
 
 当前配置可在 macOS `10.15.4` 下正常运行。
 
