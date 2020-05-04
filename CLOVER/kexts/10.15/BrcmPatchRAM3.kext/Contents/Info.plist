@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.5.2</string>
+	<string>2.5.3</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -23,7 +23,7 @@
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2.5.2</string>
+	<string>2.5.3</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
@@ -1391,7 +1391,7 @@
 			<key>DisplayName</key>
 			<string>Dell Wireless 1820A Bluetooth 4.1 LE</string>
 			<key>FirmwareKey</key>
-			<string>BCM4350C5_003.006.007.0221.4688_v8784</string>
+			<string>BCM4350C5_003.006.007.0222.4689_v4689</string>
 			<key>IOClass</key>
 			<string>BrcmPatchRAM3</string>
 			<key>IOMatchCategory</key>
@@ -2113,7 +2113,7 @@
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>as.acidanthera.BrcmFirmwareStore</key>
-		<string>2.5.2</string>
+		<string>2.5.3</string>
 		<key>com.apple.iokit.IOUSBHostFamily</key>
 		<string>1.0.1</string>
 		<key>com.apple.kpi.bsd</key>
