@@ -12,6 +12,15 @@
 
 ## 内核扩展、引导等更新 Integrated Kexts, EFI and so on Update log
 
+### 2020-05-05
+
+1. 更新`Clover`至5115;
+   Update `Clover` to 5115;
+1. 更新`Lilu`系驱动至最新;
+   Update `Lilu` series kexts to the latest;
+1. 添加读卡器支持;
+   Add Support for SD Card Reader; 
+   
 ### 2020-04-29
 
 1. 更新`VoodooI2C`至 2.4.2
