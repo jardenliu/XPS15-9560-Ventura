@@ -7,6 +7,15 @@
 
 ## 内核扩展与引导等其他更新 Integrated Kexts, EFI and so on Update log
 
+### 2020-05-05
+
+1. 更新OpenCore至0.5.8；
+   Update `OpenCore` to 0.5.8;
+1. 更新所有`内核扩展`至最新版；
+   Update All `Kernel Extension` to the last version;
+1. 添加读卡器支持;
+   Add Support for SD Card Reader;
+
 ### 2020-04-29
 
 1. 更新`VoodooI2C`至 2.4.2；

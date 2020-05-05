@@ -4,9 +4,11 @@
 
  [中文](README.md) | [English](README_EN.md) 
 
-## Integrated Kexts, EFI and so on Update log 2020-04-29
+## Integrated Kexts, EFI and so on Update 2020-05-05
 
-1. Update `VoodooI2C` to 2.4.2
+1. Update `OpenCore` to 0.5.8;
+2. Update All `Kernel Extension` to the last version;
+3. Add Support for SD Card Reader;
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/OpenCore/changelog.md)
 

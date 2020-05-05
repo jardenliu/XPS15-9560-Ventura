@@ -4,9 +4,11 @@
 
  [中文](README.md) | [English](README_EN.md)
 
-## 内核扩展与引导等其他更新 2020-04-29
+## 内核扩展与引导等其他更新 2020-05-05
 
-1. 更新`VoodooI2C`至 2.4.2；
+1. 更新OpenCore至0.5.8；
+2. 更新所有`内核扩展`至最新版；
+3. 添加读卡器支持;
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/OpenCore/changelog.md)
 
