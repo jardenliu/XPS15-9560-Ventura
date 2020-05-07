@@ -12,11 +12,12 @@
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
-### Integrated Kexts, EFI and so on Update 2020-04-29
+### Integrated Kexts, EFI and so on Update 2020-05-05
 
-1. Update `VoodoI2C` to `2.4.2`
-2. Update `Clover` to 5114;
-
+1. Update `Clover` to 5115;
+2. Update `Lilu` series kexts to the latest;
+3. Add Support for SD Card Reader; 
+**
 macOS `10.15.4` works properly in current configuration.
 
 ## Configuration
@@ -31,10 +32,9 @@ macOS `10.15.4` works properly in current configuration.
 
 1. Fingerprint sensor
 2. Discrete graphic card, since macOS doesn't support Optimus technolog
-3. SD Card Reader
-4. Intel Bluetooth only works after warm restart from Windows
-5. Stock Wi-Fi Card Killer Wireless 1535
-6. Everything else works well
+3. Intel Bluetooth only works after warm restart from Windows
+4. Stock Wi-Fi Card Killer Wireless 1535
+5. Everything else works well
 
 ## Installation
 
