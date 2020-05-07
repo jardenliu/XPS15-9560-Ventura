@@ -1,13 +1,11 @@
 // Remove Some Device Table
-// Remove NVIDIA GPU and Realtek SD Card
+// Remove NVIDIA GPU
 //
 DefinitionBlock ("", "SSDT", 2, "DXPS", "RMDC", 0)
 {
     External (_SB_.PCI0.PEG0.PEGP._OFF, MethodObj)
     External (_SB_.PCI0.PEG0.PEGP._ON, MethodObj)
-    External (_SB_.PCI0.RP02, DeviceObj)
     External (_SB_.PCI0.RP02.PXSX._OFF, MethodObj)
-    External (_SB_.PCI0.RP02.PXSX.XSTA, MethodObj)
     
     // Abstract a New Device and Disable Devices when intilize the new one
     If (_OSI ("Darwin"))
@@ -19,7 +17,7 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "RMDC", 0)
             {
             
                 DGOF ()
-                SDOF ()
+                //SDOF ()
             }
             // Disable Nvidia GPU
             Method (DGOF, 0)
@@ -47,14 +45,14 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "RMDC", 0)
             }
         }
     
-        // Ensure Disable SDCard
-        Scope (_SB.PCI0.RP02)
-        {
-            Method (_STA, 0, NotSerialized)  // _STA: Status
-            {
-                Return (Zero)
-            }
-        }
+//        // Ensure Disable SDCard
+//        Scope (_SB.PCI0.RP02)
+//        {
+//            Method (_STA, 0, NotSerialized)  // _STA: Status
+//            {
+//                Return (Zero)
+//            }
+//        }
     }
 }
 
