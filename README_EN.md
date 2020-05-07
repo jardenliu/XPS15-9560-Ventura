@@ -12,9 +12,9 @@
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
-### Integrated Kexts, EFI and so on Update 2020-05-05
+### Integrated Kexts, EFI and so on Update 2020-05-07
 
-1. Update `Clover` to 5115;
+1. Update `Clover` to 5116;
 2. Update `Lilu` series kexts to the latest;
 3. Add Support for SD Card Reader; 
 **
