@@ -19,13 +19,13 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Mirror the Github organization repos to Gitee.
-      uses: Yikun/gitee-mirror-action@v0.01
+      uses: Yikun/hub-mirror-action@master
       with:
-        # Gitee对应的秘钥
-        private_key: ${{ secrets.GITEE_TOKEN }}
-        # 需要同步的Github组织名（源）
-        github_org: jardenliu
-        # 需要同步到的Gitee的组织名（目的）
-        gitee_org: yeliujun
+        src: github/jardenliu
+        dst: gitee/yeliujun
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+        dst_token: ${{ secrets.GITEE_TOKEN }}
+        account_type: user
+        force_update: true
     
 
