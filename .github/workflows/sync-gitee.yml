@@ -26,7 +26,6 @@ jobs:
         git remote remove origin 
         git remote add origin https://yeliujun:${{secrets.GITEE_TOKEN}}@gitee.com/yeliujun/XPS15-9560-Catalina.git
         git fetch --unshallow origin
-        git pull
     - name: push
       run:  git push --set-upstream origin master -f
     
