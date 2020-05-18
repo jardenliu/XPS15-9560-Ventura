@@ -25,7 +25,7 @@ jobs:
         dst: gitee/yeliujun
         dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
         dst_token: ${{ secrets.GITEE_TOKEN }}
-        white_list: "XPS15-9560-Catalina"
+        static_list: "XPS15-9560-Catalina"
         account_type: user
         force_update: true
     
