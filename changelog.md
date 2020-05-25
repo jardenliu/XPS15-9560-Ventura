@@ -12,6 +12,11 @@
 
 ## 内核扩展、引导等更新 Integrated Kexts, EFI and so on Update log
 
+### 2020-05-25
+
+1. 更新`Clover`至5118;
+   Update `Clover` to 5118; 
+
 ### 2020-05-07
 
 1. 更新`Clover`至5116;
