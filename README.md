@@ -13,11 +13,9 @@
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
 
-### 内核扩展、引导等更新 2020-05-05
+### 内核扩展、引导等更新 2020-05-25
 
-1. 更新`Clover`至5115;
-2. 更新`Lilu`系驱动至最新;
-3. 添加读卡器支持;
+1. 更新`Clover`至5118;
 
 当前配置可在 macOS `10.15.4` 下正常运行。
 
