@@ -12,6 +12,7 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "I2C", 0x00000000)
     External (SSD1, IntObj)
     External (SSH1, IntObj)
     External (SSL1, IntObj)
+    External (SMD0, FieldUnitObj)
     External (GPEN, FieldUnitObj)
     External (GPDI, FieldUnitObj)
     External (SDM1, FieldUnitObj)
@@ -30,6 +31,7 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "I2C", 0x00000000)
     {
         If (_OSI ("Darwin"))
         {
+            SMD0 = 0
             GPEN = 1
             SDS1 = 0
 
