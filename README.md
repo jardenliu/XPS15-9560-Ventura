@@ -4,11 +4,11 @@
 
  [中文](README.md) | [English](README_EN.md)
 
-## 内核扩展与引导等其他更新 2020-05-05
+## 内核扩展与引导等其他更新 2020-06-02
 
-1. 更新OpenCore至0.5.8；
+1. 更新OpenCore至0.5.9；
 2. 更新所有`内核扩展`至最新版；
-3. 添加读卡器支持;
+3. 尝试修复睡眠唤醒后HDMI无信号的问题(commit [@AntSYau](https://github.com/jardenliu/XPS15-9560-Catalina/pull/143/commits/5c918a6fca9b300754a5659e3efb78e8571f02f4));
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/OpenCore/changelog.md)
 
@@ -71,7 +71,6 @@
 
 1. 不要开启`文件保险箱加密(FileValue)`，不要开启`文件保险箱加密(FileValue)`，不要开启`文件保险箱加密(FileValue)`！！！
 2. 使用OC前，请务必保证你已经解锁了`CFGlock`!如果你没有解锁`CFGLock`，则必须修改配置中`AppleXcpmCfgLock`以及`IgnoreInvalidFlexRatio`两项为`True`否则将启动失败。
-
 
 ## 其他配置（i5等/1080P）说明
 如果你是1080P用户，请注意以下几点：
