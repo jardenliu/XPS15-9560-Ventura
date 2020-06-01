@@ -12,11 +12,13 @@
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
-### Integrated Kexts, EFI and so on Update 2020-05-25
+### Integrated Kexts, EFI and so on Update 2020-06-02
 
-1. Update `Clover` to 5118; 
-**
-macOS `10.15.4` works properly in current configuration.
+1. Update All `Kext Extensions` to latest version; 
+2. Try to fix no HDMI signal after wake from sleep(committed by [@AntSYau](https://github.com/jardenliu/XPS15-9560-Catalina/pull/143/commits/5c918a6fca9b300754a5659e3efb78e8571f02f4));
+
+
+macOS `10.15.5` works properly in current configuration.
 
 ## Configuration
 

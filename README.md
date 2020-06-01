@@ -13,11 +13,12 @@
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
 
-### 内核扩展、引导等更新 2020-05-25
+### 内核扩展、引导等更新 2020-06-02
 
-1. 更新`Clover`至5118;
+1. 更新`所有内核扩展`至最新版
+2. 尝试修复睡眠唤醒后HDMI无信号的问题([@AntSYau](https://github.com/jardenliu/XPS15-9560-Catalina/pull/143/commits/5c918a6fca9b300754a5659e3efb78e8571f02f4)提交);
 
-当前配置可在 macOS `10.15.4` 下正常运行。
+当前配置可在 macOS `10.15.5` 下正常运行。
 
 ## 配置
 
@@ -119,9 +120,11 @@ sudo mount -uw /
 4. 对于 *DW1830* ，为了让其在Windows下以更佳状态工作，请在Windows中按下`Win+X+M`打开`设备管理器`，在`网络适配器`栏目下双击`Dell Wireless 1830 802.11ac`（即无线网卡）在高级选项卡中找到`Bluetooth Cooperation`（前面 Bluetooth 一致，后边可能不同），设置为`Disable`。
 
 ## 贡献者
+
 [SilentSliver](https://github.com/SilentSliver)
 
 ## 鸣谢
+
 [Apple](https://www.apple.com)、[RehabMan](https://github.com/RehabMan)、[Acidanthera](https://github.com/acidanthera)、[PMheart](https://github.com/PMheart)、[alexandred](https://github.com/alexandred)、[wmchris](https://github.com/wmchris)、[darkhandz](https://github.com/darkhandz)、[gunslinger23](https://github.com/gunslinger23)、[goodwin](https://github.com/goodwin)、[blackosx](https://sourceforge.net/u/blackosx/profile/)[Badruzeus](https://sourceforge.net/u/badruzeus/profile/)等
 
 注：排名不分先后；如有遗漏，请勿见怪，感谢您的付出；
