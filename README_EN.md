@@ -45,7 +45,7 @@ If the tracpad doesn't work during installation, please plug a wired mouse or a 
 ## Other Configurations (CPU like i5 or others/1080P) note
 If you are using a 1080P screen, please notice：
 1. （not must）Use [xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi) to enable HiDPI；
-2. Use `ProperTree`或者`OpenCore Configurator` to edit `OC\Config.plist`, and change the `UIScale` part Value to `1`, or use `Other Text Editor (Such as NotePad)` and edit the `UIScale` part as after shows：
+2. Use `ProperTree` or `OpenCore Configurator` to edit `OC\Config.plist`, and change the `UIScale` part Value to `1`, or use `Other Text Editor (Such as NotePad)` and edit the `UIScale` part as after shows：
    ```
    <key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
 	<dict>
