@@ -78,11 +78,11 @@
 2. 使用`ProperTree`或者`OpenCore Configurator`修改`OC\Config.plist`中`NVRAM\4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14`部分`UIScale`值设置为`1`或用`其他文本编辑器（如记事本等）`修改`UIScale`部分如下：
 
 ```
-  <key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
-	<dict>
-		<key>UIScale</key>
-		<data>AQ==</data>
-	</dict>
+<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
+<dict>
+	<key>UIScale</key>
+	<data>AQ==</data>
+</dict>
 ```
 
 如果你是非i7用户，请注意以下几点：
