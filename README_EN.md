@@ -8,7 +8,7 @@
 
 1. Update `OpenCore` to 0.5.9;
 2. Update All `Kernel Extensions` to the last version;
-3. Try to fix no HDMI signal after wake from sleep(commit [@AntSYau](https://github.com/jardenliu/XPS15-9560-Catalina/pull/143/commits/5c918a6fca9b300754a5659e3efb78e8571f02f4));
+3. Try to fix no HDMI signal after wake from sleep(commited by [@AntSYau](https://github.com/jardenliu/XPS15-9560-Catalina/pull/143/commits/5c918a6fca9b300754a5659e3efb78e8571f02f4));
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/OpenCore/changelog.md)
 
