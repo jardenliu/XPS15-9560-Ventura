@@ -8,7 +8,7 @@
 
 1. 更新OpenCore至0.5.9；
 2. 更新所有`内核扩展`至最新版；
-3. 尝试修复睡眠唤醒后HDMI无信号的问题(commit [@AntSYau](https://github.com/jardenliu/XPS15-9560-Catalina/pull/143/commits/5c918a6fca9b300754a5659e3efb78e8571f02f4));
+3. 尝试修复睡眠唤醒后HDMI无信号的问题([@AntSYau](https://github.com/jardenliu/XPS15-9560-Catalina/pull/143/commits/5c918a6fca9b300754a5659e3efb78e8571f02f4)提交);
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/OpenCore/changelog.md)
 
@@ -76,18 +76,19 @@
 如果你是1080P用户，请注意以下几点：
 1. （非必须）使用[xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)项目提供的方式开启HiDPI；
 2. 使用`ProperTree`或者`OpenCore Configurator`修改`OC\Config.plist`中`NVRAM\4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14`部分`UIScale`值设置为`1`或用`其他文本编辑器（如记事本等）`修改`UIScale`部分如下：
-   ```
-  <key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
-	<dict>
-		<key>UIScale</key>
-		<data>AQ==</data>
-	</dict>
-   ```
+
+```
+<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
+<dict>
+	<key>UIScale</key>
+	<data>AQ==</data>
+</dict>
+```
 
 如果你是非i7用户，请注意以下几点：
 1. （必须）确保你现在已经安装好系统了；
-2. （必须）删除项目中`OC\Kexts\Other\CPUFriendDataProvider.kext`;
-3. （必须）使用[stevezhengshiqi/one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend/blob/master/README_CN.md)提供的方式生成新的`CPUFriendDataProvider.kext`并放至`OC\Kexts\Other`;
+2. （必须）删除项目中`OC\Kexts\CPUFriendDataProvider.kext`;
+3. （必须）使用[stevezhengshiqi/one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend/blob/master/README_CN.md)提供的方式生成新的`CPUFriendDataProvider.kext`并放至`OC\Kexts\`;
 
 ## 小问题处理方式
 
@@ -97,7 +98,25 @@
 
 #### 2. 安卓 USB 网络共享
 
-把`Post-install`里面的`HoRNDIS.kext`放入`CLOVER/kexts/Other`
+把`Post-install`里面的`HoRNDIS.kext`放入`OC/kexts/`中，并使用文本编辑器在`Kernel/Add`项下添加以下内容。
+```
+<dict>
+	<key>BundlePath</key>
+	<string>HoRNDIS.kext</string>
+	<key>Comment</key>
+	<string>Android Hotpot</string>
+	<key>Enabled</key>
+	<true/>
+	<key>ExecutablePath</key>
+	<string>Contents/MacOS/HoRNDIS</string>
+	<key>MaxKernel</key>
+	<string></string>
+	<key>MinKernel</key>
+	<string></string>
+	<key>PlistPath</key>
+	<string>Contents/Info.plist</string>
+</dict>
+```
 
 #### 3. 解锁根目录
 
@@ -109,7 +128,7 @@ sudo mount -uw /
 
 1. 关闭 wifi 唤醒和小憩，`系统偏好设置` -> `节能` 取消两个选项卡中的`小憩`和`唤醒以供Wi-Fi网络访问`的勾选。
 2. 关闭蓝牙唤醒电脑, `系统偏好设置` -> `蓝牙` -> `高级` 取消所有勾选。
-3. 对于 *非 DW1830* ，需要替换`Post-install/非DW1830BT/USBPower.kext`到`CLOVER/kexts/Other/`
+3. 对于 *非 DW1830* ，需要替换`Post-install/非DW1830BT/USBPorts.kext`到`OC/kexts/`
 4. 对于 *DW1830* ，为了让其在Windows下以更佳状态工作，请在Windows中按下`Win+X+M`打开`设备管理器`，在`网络适配器`栏目下双击`Dell Wireless 1830 802.11ac`（即无线网卡）在高级选项卡中找到`Bluetooth Cooperation`（前面 Bluetooth 一致，后边可能不同），设置为`Disable`。
 
 ## 贡献者

@@ -8,7 +8,7 @@
 
 1. Update `OpenCore` to 0.5.9;
 2. Update All `Kernel Extensions` to the last version;
-3. Try to fix no HDMI signal after wake from sleep(commit [@AntSYau](https://github.com/jardenliu/XPS15-9560-Catalina/pull/143/commits/5c918a6fca9b300754a5659e3efb78e8571f02f4));
+3. Try to fix no HDMI signal after wake from sleep(commited by [@AntSYau](https://github.com/jardenliu/XPS15-9560-Catalina/pull/143/commits/5c918a6fca9b300754a5659e3efb78e8571f02f4));
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/OpenCore/changelog.md)
 
@@ -45,7 +45,7 @@ If the tracpad doesn't work during installation, please plug a wired mouse or a 
 ## Other Configurations (CPU like i5 or others/1080P) note
 If you are using a 1080P screen, please notice：
 1. （not must）Use [xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi) to enable HiDPI；
-2. Use `ProperTree`或者`OpenCore Configurator` to edit `OC\Config.plist`, and change the `UIScale` part Value to `1`, or use `Other Text Editor (Such as NotePad)` and edit the `UIScale` part as after shows：
+2. Use `ProperTree` or `OpenCore Configurator` to edit `OC\Config.plist`, and change the `UIScale` part Value to `1`, or use `Other Text Editor (Such as NotePad)` and edit the `UIScale` part as after shows：
    ```
    <key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
 	<dict>
@@ -53,12 +53,11 @@ If you are using a 1080P screen, please notice：
 		<data>AQ==</data>
 	</dict>
    ```
-3. Use `Clover Configurator` to edit `CLOVER\Config.plist`, and change the `Theme` part to `Outlines1080` in `GUI` part,or use `Other Text Editor (Such as NotePad)` to replace `Outlines4K` to `Outlines1080` (or `Universe` If you want to use the old one);
 
 If you are **not** using i7-7700HQ，please notice：
 1. (**Must**)Please Insure you have already boot in your macOS normally；
-2. (**Must**)Delete `OC\Kexts\Other\CPUFriendDataProvider.kext`;
-3. (**Must**)Use [stevezhengshiqi/one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend/blob/master/README_CN.md) to generate a new `CPUFriendDataProvider.kext` and place it in `OC\Kexts\Other`;
+2. (**Must**)Delete `OC\Kexts\CPUFriendDataProvider.kext`;
+3. (**Must**)Use [stevezhengshiqi/one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend/blob/master/README_CN.md) to generate a new `CPUFriendDataProvider.kext` and place it in `OC\Kexts`;
 
 ## Work around
 
@@ -72,21 +71,35 @@ $ defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 
 then reboot.
 
-#### 2. 1080P enable HIDPI
+#### 2. Android USB Network Sharing
 
-[xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
+set `Post-install/HoRNDIS.kext` to `OC/kexts`, then edit `Kernel/Add` part in `OC/config.plist` with following content.
+```
+<dict>
+	<key>BundlePath</key>
+	<string>HoRNDIS.kext</string>
+	<key>Comment</key>
+	<string>Android Hotpot</string>
+	<key>Enabled</key>
+	<true/>
+	<key>ExecutablePath</key>
+	<string>Contents/MacOS/HoRNDIS</string>
+	<key>MaxKernel</key>
+	<string></string>
+	<key>MinKernel</key>
+	<string></string>
+	<key>PlistPath</key>
+	<string>Contents/Info.plist</string>
+</dict>
+```
 
-#### 3. Android USB Network Sharing
-
-set `Post-install/HoRNDIS.kext` to `CLOVER/kexts/Other`
-
-#### 4. Unlock Root directory
+#### 3. Unlock Root directory
 
 ```
 sudo mount -uw /
 ```
 
-#### 5. macOS Minor Update Suggestions
+#### 4. macOS Minor Update Suggestions
 
 Rebuild kextcache after each macOS minor update, you can create a file named `rebuilt.command` containing the command `sudo kextcache -i /`. When an update is finished, you can directly run this file and input your password to rebuild kextcache. This can repair some minor issues such as `Brightness Control Failure` or `USB-C Device cannot work properly`.
 
