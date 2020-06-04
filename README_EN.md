@@ -29,7 +29,6 @@ For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15
 5. Stock Wi-Fi Card Killer Wireless 1535
 6. USB Type-C Hotplug
 7. Everything else works well
-8. Boot Windows
 
 ## Installation
 
