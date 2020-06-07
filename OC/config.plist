@@ -96,7 +96,22 @@
 			</dict>
 		</array>
 		<key>Delete</key>
-		<array/>
+		<array>
+			<dict>
+				<key>All</key>
+				<true/>
+				<key>Comment</key>
+				<string>xh_rvp11</string>
+				<key>Enabled</key>
+				<true/>
+				<key>OemTableId</key>
+				<data></data>
+				<key>TableLength</key>
+				<integer>2956</integer>
+				<key>TableSignature</key>
+				<data>U1NEVA==</data>
+			</dict>
+		</array>
 		<key>Patch</key>
 		<array>
 			<dict>
