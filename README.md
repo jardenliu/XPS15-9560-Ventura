@@ -96,28 +96,45 @@
 2. （必须）删除项目中`CLOVER\Kexts\Other\CPUFriendDataProvider.kext`;
 3. （必须）使用[stevezhengshiqi/one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend/blob/master/README_CN.md)提供的方式生成新的`CPUFriendDataProvider.kext`并放至`CLOVER\Kexts\Other`;
 
+## 安装后处理
+
+### 1. 耳机Mic切换修复
+
+1. 双击`Post-install\AlCPlugFix\Install_Double-CLick.command`，按照弹出终端窗口提示进行操作；
+2. 重启电脑以使其生效。
+
+### 2. Wifi 蓝牙设置
+
+1. 关闭 wifi 唤醒和小憩，`系统偏好设置` -> `节能` 取消两个选项卡中的`小憩`和`唤醒以供Wi-Fi网络访问`的勾选。
+2. 关闭蓝牙唤醒电脑, `系统偏好设置` -> `蓝牙` -> `高级` 取消所有勾选。
+3. 对于 *非 DW1830* ，需要替换`Post-install/非DW1830BT/USBPower.kext`到`CLOVER/kexts/Other/`
+4. 对于 *DW1830* ，为了让其在Windows下以更佳状态工作，请在Windows中按下`Win+X+M`打开`设备管理器`，在`网络适配器`栏目下双击`Dell Wireless 1830 802.11ac`（即无线网卡）在高级选项卡中找到`Bluetooth Cooperation`（前面 Bluetooth 一致，后边可能不同），设置为`Disable`。
+
+### 3. 仿冒以太网卡以使用App Store（来自 [keysun11952](https://github.com/keysun11952)）
+
+该部分适用于在macOS下使用USB网卡等方式上网并需要使用App Store的用户。
+
+1. 将`Post-install/FakeEthernetAdapter/NullEthernet.kext`放入`CLOVER/Kexts/Other`中；
+2. 将`Post-install/FakeEthernetAdapter/SSDT-ETH.aml` 放入 `CLOVER/ACPI/patched`；
+3. 在`CLOVER/config.plist`-`ACPI/SortedOrder`中添加`SSDT-ETH.aml`；
+4. 重启电脑以使其生效。
+
+### 4. 安卓 USB 网络共享
+
+1. 将`Post-install\AndroidUSBNetworkShare(安卓USB共享)\HoRNDIS.kext`放入`CLOVER/kexts/Other`中；
+2. 重启电脑以使其生效。
+
 ## 小问题处理方式
 
 #### 1. 字体细、发虚
 
 终端执行`defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`，注销再登录即可
 
-#### 2. 安卓 USB 网络共享
-
-把`Post-install`里面的`HoRNDIS.kext`放入`CLOVER/kexts/Other`
-
-#### 3. 解锁根目录
+#### 2. 解锁根目录
 
 ```
 sudo mount -uw /
 ```
-
-### Wifi 蓝牙设置
-
-1. 关闭 wifi 唤醒和小憩，`系统偏好设置` -> `节能` 取消两个选项卡中的`小憩`和`唤醒以供Wi-Fi网络访问`的勾选。
-2. 关闭蓝牙唤醒电脑, `系统偏好设置` -> `蓝牙` -> `高级` 取消所有勾选。
-3. 对于 *非 DW1830* ，需要替换`Post-install/非DW1830BT/USBPower.kext`到`CLOVER/kexts/Other/`
-4. 对于 *DW1830* ，为了让其在Windows下以更佳状态工作，请在Windows中按下`Win+X+M`打开`设备管理器`，在`网络适配器`栏目下双击`Dell Wireless 1830 802.11ac`（即无线网卡）在高级选项卡中找到`Bluetooth Cooperation`（前面 Bluetooth 一致，后边可能不同），设置为`Disable`。
 
 ## 贡献者
 
@@ -125,6 +142,6 @@ sudo mount -uw /
 
 ## 鸣谢
 
-[Apple](https://www.apple.com)、[RehabMan](https://github.com/RehabMan)、[Acidanthera](https://github.com/acidanthera)、[PMheart](https://github.com/PMheart)、[alexandred](https://github.com/alexandred)、[wmchris](https://github.com/wmchris)、[darkhandz](https://github.com/darkhandz)、[gunslinger23](https://github.com/gunslinger23)、[goodwin](https://github.com/goodwin)、[blackosx](https://sourceforge.net/u/blackosx/profile/)[Badruzeus](https://sourceforge.net/u/badruzeus/profile/)等
+[Apple](https://www.apple.com)、[RehabMan](https://github.com/RehabMan)、[Acidanthera](https://github.com/acidanthera)、[PMheart](https://github.com/PMheart)、[alexandred](https://github.com/alexandred)、[wmchris](https://github.com/wmchris)、[darkhandz](https://github.com/darkhandz)、[gunslinger23](https://github.com/gunslinger23)、[goodwin](https://github.com/goodwin)、[cholonam](https://github.com/cholonam/)、[Menchen](https://github.com/Menchen)、[blackosx](https://sourceforge.net/u/blackosx/profile/)[Badruzeus](https://sourceforge.net/u/badruzeus/profile/)等
 
 注：排名不分先后；如有遗漏，请勿见怪，感谢您的付出；

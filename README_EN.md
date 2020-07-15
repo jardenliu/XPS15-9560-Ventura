@@ -68,6 +68,33 @@ If you are **not** using i7-7700HQ，please notice：
 2. (**Must**)Delete `CLOVER\Kexts\Other\CPUFriendDataProvider.kext`;
 3. (**Must**)Use [stevezhengshiqi/one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend/blob/master/README_CN.md) to generate a new `CPUFriendDataProvider.kext` and place it in `CLOVER\Kexts\Other`;
 
+## After Installation...
+
+### 1. Headphone Mic Fix
+
+1. Double click `Post-install\AlCPlugFix\Install_Double-CLick.command` to install this patch, and follow the tips show in the window of terminal;
+2. Reboot your computer to take effect.
+
+### 2. Wifi & Bluetooth Setting
+
+1. Disable Power Nap，`System Preferences` -> `Energy Saver` disable all `Power Nap` options, and disable `Wake for Wi-Fi network access` option;
+2. dissble Wake for Bluetooth, `System Preferences` -> `Bluetooth` -> `Advanced` disable all options;
+3. For **_DW1830_** users, in order to imporve its performance and stability in Windows, please hit `Win+X+M` to open `Device Manager`, find the column Network Adapter and find `Dell Wireless 1830 802.11ac` and double click it, in the `Advanced` tab, find `Bluetooth Cooperation` and set it to `Disable`.  
+
+### 3. Fake Ethernet Card to use App Store（from [keysun11952](https://github.com/keysun11952)）
+
+This part is written for those who are using **not-BCM** wireless card need to get apps form App Store. 
+
+1. Copy `Post-install/FakeEthernetAdapter/NullEthernet.kext` to `CLOVER\Kexts\Other`;
+2. Copy`Post-install/FakeEthernetAdapter/SSDT-ETH.aml` to `CLOVER\ACPI\patched`;
+3. Add `SSDT-ETH.aml` at `ACPI/SortedOrder` in `CLOVER/config.plist`;
+4. Reboot your computer to take effect.
+
+### 4. Android USB Network Sharing
+
+1. Copy `Post-install/HoRNDIS.kext` to `CLOVER/kexts/Other`;
+2. Reboot your computer to take effect.
+
 ## Work around
 
 #### 1. fix fuzzy font
@@ -80,30 +107,19 @@ $ defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 
 then reboot.
 
-#### 2. Android USB Network Sharing
-
-set `Post-install/HoRNDIS.kext` to `CLOVER/kexts/Other`
-
-#### 3. Unlock Root directory
+#### 2. Unlock Root directory
 
 ```
 sudo mount -uw /
 ```
 
-#### 4. macOS Minor Update Suggestions
+#### 3. macOS Minor Update Suggestions
 
 Rebuild kextcache after each macOS minor update, you can create a file named `rebuilt.command` containing the command `sudo kextcache -i /`. When an update is finished, you can directly run this file and input your password to rebuild kextcache. This can repair some minor issues such as `Brightness Control Failure` or `USB-C Device cannot work properly`.
-
-
-### Wifi & Bluetooth Setting
-
-1. Disable Power Nap，`System Preferences` -> `Energy Saver` disable all `Power Nap` options, and disable `Wake for Wi-Fi network access` option.
-2. dissble Wake for Bluetooth, `System Preferences` -> `Bluetooth` -> `Advanced` disable all options.
-3. For **_DW1830_** users, in order to imporve its performance and stability in Windows, please hit `Win+X+M` to open `Device Manager`, find the column Network Adapter and find `Dell Wireless 1830 802.11ac` and double click it, in the `Advanced` tab, find `Bluetooth Cooperation` and set it to `Disable`.  
 
 ## Contributor
 [SilentSliver](https://github.com/SilentSliver)
 
 ## Special Thanks to
 
-[Apple](https://www.apple.com)、[RehabMan](https://github.com/RehabMan)、[Acidanthera](https://github.com/acidanthera)、[PMheart](https://github.com/PMheart)、[alexandred](https://github.com/alexandred)、[wmchris](https://github.com/wmchris)、[darkhandz](https://github.com/darkhandz)、[gunslinger23](https://github.com/gunslinger23)、[goodwin](https://github.com/goodwin)、[blackosx](https://sourceforge.net/u/blackosx/profile/)[Badruzeus](https://sourceforge.net/u/badruzeus/profile/) and so on.
+[Apple](https://www.apple.com)、[RehabMan](https://github.com/RehabMan)、[Acidanthera](https://github.com/acidanthera)、[PMheart](https://github.com/PMheart)、[alexandred](https://github.com/alexandred)、[wmchris](https://github.com/wmchris)、[darkhandz](https://github.com/darkhandz)、[gunslinger23](https://github.com/gunslinger23)、[goodwin](https://github.com/goodwin)、[cholonam](https://github.com/cholonam/)、[Menchen](https://github.com/Menchen)、[blackosx](https://sourceforge.net/u/blackosx/profile/)[Badruzeus](https://sourceforge.net/u/badruzeus/profile/) and so on.
