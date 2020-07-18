@@ -1159,7 +1159,7 @@
 				<key>Name</key>
 				<string>Setup Varities</string>
 				<key>Path</key>
-				<string>setup_var-shell.efi</string>
+				<string>GRUBShell.efi</string>
 			</dict>
 			<dict>
 				<key>Arguments</key>
