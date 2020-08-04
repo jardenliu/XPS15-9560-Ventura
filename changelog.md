@@ -19,6 +19,8 @@
 
 ### 2020-08-04
 
+1. 更新`Clover`至5120;
+   Update `Clover` to 5120; 
 1. 更新`所有内核扩展`至最新版;
    Update All `Kext Extensions` to latest version;
 1. 提高`HDMI`稳定性，修复`HDMI`音频问题;

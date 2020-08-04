@@ -14,9 +14,10 @@ For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15
 
 ### Integrated Kexts, EFI and so on Update 2020-08-04
 
-1. Update All `Kext Extensions` to latest version;
-2. Improve the stability of `HDMI`, and Fix some issues about `HDMI Audio`
-3. Use RTC fix to fix some boot issues;
+1. Update `Clover` to 5120; 
+2. Update All `Kext Extensions` to latest version;
+3. Improve the stability of `HDMI`, and Fix some issues about `HDMI Audio`
+4. Use RTC fix to fix some boot issues;
 
 macOS `10.15.6` works properly in current configuration.
 
