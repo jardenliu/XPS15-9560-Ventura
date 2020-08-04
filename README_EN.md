@@ -6,19 +6,19 @@
 
 ## Update log
 
-### Main Version Update 2020-02-02
+### Main Version Update 2020-08-04
 
-1. Add branch of OpenCore
+1. Add basic support for Big Sur (Need PrelinkedKernel. Also Need Inject Suitable EDID if you are using this laptop with 4K display screen)
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
-### Integrated Kexts, EFI and so on Update 2020-06-02
+### Integrated Kexts, EFI and so on Update 2020-08-04
 
-1. Update All `Kext Extensions` to latest version; 
-2. Try to fix no HDMI signal after wake from sleep(committed by [@AntSYau](https://github.com/jardenliu/XPS15-9560-Catalina/pull/143/commits/5c918a6fca9b300754a5659e3efb78e8571f02f4));
+1. Update All `Kext Extensions` to latest version;
+2. Improve the stability of `HDMI`, and Fix some issues about `HDMI Audio`
+3. Use RTC fix to fix some boot issues;
 
-
-macOS `10.15.5` works properly in current configuration.
+macOS `10.15.6` works properly in current configuration.
 
 ## Configuration
 

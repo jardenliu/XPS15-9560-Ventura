@@ -2,6 +2,11 @@
 
 ## 主版本更新 Main Version Update log
 
+### 2020-08-04
+
+1. 添加对Big Sur的基础支持（需要使用PrelinkedKernel启动，4K屏用户需自行注入合适的EDID）
+   Add basic support for Big Sur (Need PrelinkedKernel. Also need Inject Suitable EDID if you are using this laptop with 4K display screen)
+
 ### 2020-02-02
 1. 添加OpenCore引导（仅供测试）
    Add branch of OpenCore(Only for test)
@@ -11,6 +16,15 @@
    Support 10.15
 
 ## 内核扩展、引导等更新 Integrated Kexts, EFI and so on Update log
+
+### 2020-08-04
+
+1. 更新`所有内核扩展`至最新版;
+   Update All `Kext Extensions` to latest version;
+1. 提高`HDMI`稳定性，修复`HDMI`音频问题;
+   Improve the stability of `HDMI`, and Fix some issues about `HDMI Audio`
+1. 使用`AppleRTC`以修复一些潜在的启动问题;
+   Use RTC fix to fix some boot issues;
 
 ### 2020-06-02
 

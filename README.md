@@ -6,19 +6,20 @@
 
 ## 更新日志
 
-### 主要版本更新 2020-02-02
+### 主要版本更新 2020-08-04
 
-1. 添加OpenCore分支，提交OpenCore引导尝鲜版。
+1. 添加对Big Sur的基础支持（4K屏用户需自行注入合适的EDID）。
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
 
-### 内核扩展、引导等更新 2020-06-02
+### 内核扩展、引导等更新 2020-08-04
 
-1. 更新`所有内核扩展`至最新版
-2. 尝试修复睡眠唤醒后HDMI无信号的问题([@AntSYau](https://github.com/jardenliu/XPS15-9560-Catalina/pull/143/commits/5c918a6fca9b300754a5659e3efb78e8571f02f4)提交);
+1. 更新`所有内核扩展`至最新版;
+2. 提高`HDMI`稳定性，修复`HDMI`音频问题;
+3. 使用`AppleRTC`以修复一些潜在的启动问题;
 
-当前配置可在 macOS `10.15.5` 下正常运行。
+当前配置可在 macOS `10.15.6` 下正常运行。
 
 ## 配置
 
