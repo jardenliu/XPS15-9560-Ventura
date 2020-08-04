@@ -1,5 +1,5 @@
 
-DefinitionBlock ("", "SSDT", 2, "hack", "XOSI", 0x00000000)
+DefinitionBlock ("", "SSDT", 2, "DXPS", "XOSI", 0x00000000)
 {
     External (_SB.ACOS, IntObj)
     External (_SB.ACSE, IntObj)

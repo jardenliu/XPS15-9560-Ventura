@@ -11,8 +11,7 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "BRT6", 0)
     External (_SB_.PCI0.GFX0.LCD_, DeviceObj)
     External (_SB_.PCI0.LPCB.PS2K, DeviceObj)
     External (_SB_.PCI0.GFX0.BRTX, MethodObj)
-    External (ALSD, DeviceObj)
-
+    External (ALSE, IntObj)
     // Fix Bright Function Key
     Scope (_SB.PCI0.GFX0)
     {
@@ -46,6 +45,7 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "BRT6", 0)
     //Inject PNLF to Control Backlight
     If (_OSI ("Darwin"))
     {
+        Store (2,ALSE)
         Scope (_SB)
         {
             Device (PNLF)

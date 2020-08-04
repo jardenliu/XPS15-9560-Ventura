@@ -2,7 +2,7 @@
 DefinitionBlock ("", "SSDT", 2, "DXPS", "ADP1", 0)
 {
     External (_SB_.AC__, DeviceObj)
-    External (_SB_.PCI0.LPCB.ECDV, DeviceObj)
+    External (_SB_.PCI0.LPCB.EC, DeviceObj)
     If (_OSI ("Darwin"))
     {
         Scope (\_SB.AC)
@@ -14,7 +14,7 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "ADP1", 0)
             })
         }
 
-        Device (_SB.PCI0.LPCB.ECDV.CHRG)
+        Device (_SB.PCI0.LPCB.EC.CHRG)
         {
             Name (_HID, "DELLBBB1")  // _HID: Hardware ID
             Method (_STA, 0)  // _STA: Status
