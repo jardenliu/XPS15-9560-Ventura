@@ -486,8 +486,14 @@
 		<key>AppleRTC</key>
 		<true/>
 		<key>KernelPm</key>
-		<true/>
+		<false/>
 		<key>KernelLapic</key>
+		<false/>
+		<key>PanicNoKextDump</key>
+		<true/>
+		<key>KernelXCPM</key>
+		<true/>
+		<key>Debug</key>
 		<false/>
 		<key>KextsToPatch</key>
 		<array>
@@ -552,10 +558,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>KernelXCPM</key>
-		<false/>
-		<key>Debug</key>
-		<false/>
 		<key>KernelToPatch</key>
 		<array>
 			<dict>
@@ -569,6 +571,64 @@
 				<string>MSR 0xE2 _xcpm_idle prevent instant reboot (c) Pike R. Alpha</string>
 				<key>MatchOS</key>
 				<string>10.12,10.13</string>
+			</dict>
+			<dict>
+				<key>MaskReplace</key>
+				<data>AAAAAAAAAAD//wAAAAAA</data>
+				<key>Find</key>
+				<data>/4A9tcZOAAAPhRcBAABB</data>
+				<key>MaskFind</key>
+				<data>////AAAA/////wD/////</data>
+				<key>Comment</key>
+				<string>KbeBS-KxldUnmap (vit9696, kuckkuck)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.16,11.0</string>
+				<key>Replace</key>
+				<data>/4A9tcZOAACQ6RcBAABB</data>
+				<key>Count</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>MaskReplace</key>
+				<data>AAAAAAAAAP//AAAAAAAAAA==</data>
+				<key>Find</key>
+				<data>6EUEDwCFwA+E+gAAAEmLRQ==</data>
+				<key>MaskFind</key>
+				<data>/wAAAP//////AP///////w==</data>
+				<key>Comment</key>
+				<string>KbeBS-SIP (kuckkuck)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.16,11.0</string>
+				<key>Replace</key>
+				<data>6EUEDwCFwOsE+gAAAEmLRQ==</data>
+				<key>StartPattern</key>
+				<data>AgAAQb8BAADc</data>
+				<key>Count</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>MaskReplace</key>
+				<data>AAAAAAD//wA=</data>
+				<key>Find</key>
+				<data>6NQAAADrBeg=</data>
+				<key>MaskFind</key>
+				<data>/wD///////8=</data>
+				<key>Comment</key>
+				<string>KbeBS-EXT (kuckkuck)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.16,11.0</string>
+				<key>Replace</key>
+				<data>6NQAAACQkOg=</data>
+				<key>StartPattern</key>
+				<data>AQAx/74UAAU=</data>
+				<key>Count</key>
+				<integer>1</integer>
 			</dict>
 		</array>
 		<key>DellSMBIOSPatch</key>
