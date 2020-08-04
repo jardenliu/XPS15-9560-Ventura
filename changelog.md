@@ -1,11 +1,17 @@
 # 更新日志
 
-## 主要版本更新 Main Version Update Log 
-### 2019-10-8
-
-1. 支持 10.15 正式版; Support 10.15 Release;
-
 ## 内核扩展与引导等其他更新 Integrated Kexts, EFI and so on Update log
+
+### 2020-08-04
+
+1. 更新`OpenCore`至0.6.0；
+   Update `OpenCore` to 0.6.0;
+1. 更新所有`内核扩展`至最新版；
+   Update All `Kernel Extensions` to the last version;
+1. 修复一些HDMI音频问题；
+   Fix some HDMI Audio Issues;
+1. 使用RTCfix以修复一些潜在的启动问题；
+   Use RTC Fix to fix some boot issues;
 
 ### 2020-06-02
 

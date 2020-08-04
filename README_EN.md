@@ -4,11 +4,12 @@
 
  [中文](README.md) | [English](README_EN.md) 
 
-## Integrated Kexts, EFI and so on Update 2020-06-02
+## Integrated Kexts, EFI and so on Update 2020-08-04
 
-1. Update `OpenCore` to 0.5.9;
+1. Update `OpenCore` to 0.6.0;
 2. Update All `Kernel Extensions` to the last version;
-3. Try to fix no HDMI signal after wake from sleep(commited by [@AntSYau](https://github.com/jardenliu/XPS15-9560-Catalina/pull/143/commits/5c918a6fca9b300754a5659e3efb78e8571f02f4));
+3. Fix some HDMI Issues;
+4. Use RTC Fix to fix some boot issues;
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/OpenCore/changelog.md)
 
@@ -24,10 +25,10 @@ For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15
 
 1. Fingerprint sensor
 2. Discrete graphic card, since macOS doesn't support Optimus technolog
-3. SD Card Reader
+3. ~~SD Card Reader~~
 4. Intel Bluetooth only works after warm restart from Windows
 5. Stock Wi-Fi Card Killer Wireless 1535
-6. USB Type-C Hotplug
+6. ~~USB Type-C Hotplug~~
 7. Everything else works well
 
 ## Installation

@@ -4,11 +4,12 @@
 
  [中文](README.md) | [English](README_EN.md)
 
-## 内核扩展与引导等其他更新 2020-06-02
+## 内核扩展与引导等其他更新 2020-08-04
 
-1. 更新OpenCore至0.5.9；
+1. 更新`OpenCore`至0.6.0；
 2. 更新所有`内核扩展`至最新版；
-3. 尝试修复睡眠唤醒后HDMI无信号的问题([@AntSYau](https://github.com/jardenliu/XPS15-9560-Catalina/pull/143/commits/5c918a6fca9b300754a5659e3efb78e8571f02f4)提交);
+3. 修复一些HDMI音频问题；
+4. 使用RTCfix以修复一些潜在的启动问题；
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/OpenCore/changelog.md)
 
