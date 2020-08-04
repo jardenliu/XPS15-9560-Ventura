@@ -22,51 +22,6 @@
 	<string>1.0</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>MacBookPro14,3-AppleUSBXHCIPCI-8086_15b5</key>
-		<dict>
-			<key>CFBundleIdentifier</key>
-			<string>com.apple.driver.AppleUSBMergeNub</string>
-			<key>IOClass</key>
-			<string>AppleUSBMergeNub</string>
-			<key>IONameMatch</key>
-			<string>AppleUSBXHCIPCI</string>
-			<key>IOPCIPrimaryMatch</key>
-			<string>0x15b58086</string>
-			<key>IOProbeScore</key>
-			<integer>5000</integer>
-			<key>IOProviderClass</key>
-			<string>AppleUSBXHCIPCI</string>
-			<key>IOProviderMergeProperties</key>
-			<dict>
-				<key>port-count</key>
-				<data>
-				AwAAAA==
-				</data>
-				<key>ports</key>
-				<dict>
-					<key>XX01</key>
-					<dict>
-						<key>name</key>
-						<string>XX01</string>
-						<key>port</key>
-						<data>
-						AQAAAA==
-						</data>
-					</dict>
-					<key>XX03</key>
-					<dict>
-						<key>name</key>
-						<string>XX03</string>
-						<key>port</key>
-						<data>
-						AwAAAA==
-						</data>
-					</dict>
-				</dict>
-			</dict>
-			<key>model</key>
-			<string>MacBookPro14,3</string>
-		</dict>
 		<key>MacBookPro14,3-XHC</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -83,6 +38,14 @@
 			<string>AppleUSBXHCISPT</string>
 			<key>IOProviderMergeProperties</key>
 			<dict>
+				<key>kUSBSleepPortCurrentLimit</key>
+				<integer>2100</integer>
+				<key>kUSBSleepPowerSupply</key>
+				<integer>2600</integer>
+				<key>kUSBWakePortCurrentLimit</key>
+				<integer>2100</integer>
+				<key>kUSBWakePowerSupply</key>
+				<integer>3200</integer>
 				<key>port-count</key>
 				<data>
 				EgAAAA==
