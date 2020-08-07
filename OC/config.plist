@@ -1320,36 +1320,7 @@
 			<integer>0</integer>
 		</dict>
 		<key>Entries</key>
-		<array>
-			<dict>
-				<key>Arguments</key>
-				<string></string>
-				<key>Auxiliary</key>
-				<false/>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>Name</key>
-				<string>Manjaro</string>
-				<key>Path</key>
-				<string>PciRoot(0x0)/Pci(0x1D,0x0)/Pci(0x0,0x0)/NVMe(0x1,66-35-10-00-03-0D-08-00)/HD(1,GPT,41B397FD-8D24-445B-A1D3-352FEF4692BE,0x6,0x12FFA)/\EFI\Manjaro\grubx64.efi</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<string></string>
-				<key>Auxiliary</key>
-				<false/>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>Name</key>
-				<string>BlissOS</string>
-				<key>Path</key>
-				<string>PciRoot(0x0)/Pci(0x1D,0x0)/Pci(0x0,0x0)/NVMe(0x1,66-35-10-00-03-0D-08-00)/HD(1,GPT,41B397FD-8D24-445B-A1D3-352FEF4692BE,0x6,0x12FFA)/\EFI\Android\grubx64.efi</string>
-			</dict>
-		</array>
+		<array/>
 		<key>Security</key>
 		<dict>
 			<key>AllowNvramReset</key>
@@ -1434,10 +1405,6 @@
 				<data>emgtSGFuczoyNTI=</data>
 				<key>run-efi-updater</key>
 				<string>No</string>
-				<key>booter-fileset-kernel</key>
-				<data>AA==</data>
-				<key>booter-fileset-basesystem</key>
-				<data>AA==</data>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -1449,8 +1416,6 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<array>
 				<string>boot-args</string>
-				<string>booter-fileset-kernel</string>
-				<string>booter-fileset-basesystem</string>
 			</array>
 		</dict>
 		<key>LegacyEnable</key>
