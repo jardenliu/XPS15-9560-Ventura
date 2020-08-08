@@ -317,7 +317,7 @@
 		<key>Debug</key>
 		<false/>
 		<key>Arguments</key>
-		<string>dart=0 darkwake=1 agdpmod=vit9696 brcmfx-country=#a keepsyms=1 -lilubetaall bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300</string>
+		<string>dart=0 darkwake=1 -cdfon agdpmod=vit9696 brcmfx-country=#a keepsyms=1 -lilubetaall bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300</string>
 		<key>XMPDetection</key>
 		<false/>
 		<key>Timeout</key>
