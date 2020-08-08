@@ -317,7 +317,7 @@
 		<key>Debug</key>
 		<false/>
 		<key>Arguments</key>
-		<string>dart=0 darkwake=1 -cdfon agdpmod=vit9696 brcmfx-country=#a keepsyms=1 -lilubetaall bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300</string>
+		<string>dart=0 darkwake=1 agdpmod=vit9696 brcmfx-country=#a keepsyms=1 -lilubetaall bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300</string>
 		<key>XMPDetection</key>
 		<false/>
 		<key>Timeout</key>
@@ -400,13 +400,13 @@
 			<dict>
 				<key>framebuffer-con1-pipe</key>
 				<data>EgAAAA==</data>
-				<key>AAPL00,override-no-connect</key>
-				<string></string>
 				<key>framebuffer-con0-busid</key>
 				<data>BAAAAA==</data>
 				<key>enable-lspcon-support</key>
 				<data>AQAAAA==</data>
 				<key>framebuffer-con1-has-lspcon</key>
+				<data>AQAAAA==</data>
+				<key>enable-hdmi20</key>
 				<data>AQAAAA==</data>
 				<key>framebuffer-con0-enable</key>
 				<data>AQAAAA==</data>
