@@ -12,12 +12,11 @@
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
-### Integrated Kexts, EFI and so on Update 2020-08-04
+### Integrated Kexts, EFI and so on Update 2020-08-28
 
-1. Update `Clover` to 5120; 
-2. Update All `Kext Extensions` to latest version;
-3. Improve the stability of `HDMI`, and Fix some issues about `HDMI Audio`
-4. Use RTC fix to fix some boot issues;
+1. Update `Clover` to 5121; 
+2. Update All `Kext Extensions` to latest version (Might have some kexts not at stable branch);
+3. Rewrite `Hotpatch` to async with `OpenCore` branch;
 
 macOS `10.15.6` works properly in current configuration.
 

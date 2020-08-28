@@ -13,12 +13,11 @@
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/master/changelog.md)
 
 
-### 内核扩展、引导等更新 2020-08-04
+### 内核扩展、引导等更新 2020-08-28
 
-1. 更新`Clover`至5120;
-2. 更新`所有内核扩展`至最新版;
-3. 提高`HDMI`稳定性，修复`HDMI`音频问题;
-4. 使用`AppleRTC`以修复一些潜在的启动问题;
+1. 更新`Clover`至5121;
+2. 更新`所有内核扩展`至最新版（可能有非正式发布的版本）;
+3. 重写`Hotpatch`部分以与OC分支同步;
 
 当前配置可在 macOS `10.15.6` 下正常运行。
 
