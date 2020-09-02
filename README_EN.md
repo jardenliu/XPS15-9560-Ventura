@@ -14,7 +14,7 @@ For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15
 
 ### Integrated Kexts, EFI and so on Update 2020-08-28
 
-1. Update `Clover` to 5121; 
+1. Update `Clover` to 5122; 
 2. Update All `Kext Extensions` to latest version (Might have some kexts not at stable branch);
 3. Rewrite `Hotpatch` to async with `OpenCore` branch;
 

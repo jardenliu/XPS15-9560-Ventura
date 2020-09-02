@@ -19,8 +19,8 @@
 
 ### 2020-08-28
 
-1. 更新`Clover`至5121;
-   Update `Clover` to 5121; 
+1. 更新`Clover`至5122;
+   Update `Clover` to 5122; 
 1. 更新`所有内核扩展`至最新版（可能有非正式发布的版本）;
    Update All `Kext Extensions` to latest version (Might have some kexts not at stable branch);
 1. 重写`Hotpatch`部分以与OC分支同步;
