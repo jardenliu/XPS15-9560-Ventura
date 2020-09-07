@@ -56,12 +56,13 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "I2C", 0x00000000)
     {
         Method (SSCN, 0, NotSerialized)
         {
-            Return (PKGX (0x0210, 0x0280, 0x1E))
+            Return (PKGX (SSH1, SSL1, SSD1))
         }
 
         Method (FMCN, 0, NotSerialized)
         {
-            Return (PKGX (0x80, 0xA0, 0x1E))
+            Return (PKGX (0x0101, 0x012C, 0x62))
+            //Return (PKGX (FMH1, FML1, FMD1))
         }
         Device (TPXX)
         {
@@ -73,38 +74,27 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "I2C", 0x00000000)
                     0x00, ResourceConsumer, , Exclusive,
                     )
             })
-            Name (SBFI, ResourceTemplate ()
-            {
-                Interrupt (ResourceConsumer, Level, ActiveLow, ExclusiveAndWake, ,, _Y2A)
-                {
-                    0x00000000,
-                }
-            })
             Name (SBFG, ResourceTemplate ()
             {
-                GpioInt (Level, ActiveLow, ExclusiveAndWake, PullDefault, 0x0000,
-                    "\\_SB.PCI0.GPI0", 0x00, ResourceConsumer, ,
-                    )
-                    {   // Pin list
-                        0x0000
-                    }
+                GpioInt (Level, ActiveLow, ExclusiveAndWake, PullDefault, 0x0000,"\\_SB.PCI0.GPI0", 0x00, ResourceConsumer, ,)
+                {
+                    0x1B
+                    //0x7B
+                }
             })
             CreateWordField (SBFG, 0x17, INT1)
-            CreateDWordField (SBFI, \_SB.PCI0.I2C1.TPXX._Y2A._INT, INT2)  // _INT: Interrupts
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
 
                 INT1 = GNUM (GPDI)
-                INT2 = INUM (GPDI)
                 If ((SDM1 == Zero))
                 {
                     SHPO (GPDI, One)
                 }
-                _HID = "DLL07BE"
                 HID2 = 0x20
             }
 
-            Name (_HID, "XXXX0000")  // _HID: Hardware ID
+            Name (_HID, "DLL07BE")  // _HID: Hardware ID
             Name (_CID, "PNP0C50" /* HID Protocol Device (I2C bus) */)  // _CID: Compatible ID
             Name (_S0W, 0x03)  // _S0W: S0 Device Wake State
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
@@ -124,8 +114,8 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "I2C", 0x00000000)
                      0x00                                             // .
                 })
             }
-
-            Method (_STA, 0, NotSerialized)  // _STA: Status
+            
+            Method (_STA, 0)  // _STA: Status
             {
                 If (_OSI ("Darwin"))
                 {
@@ -135,7 +125,7 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "I2C", 0x00000000)
                 Return (Zero)
             }
 
-            Method (_CRS, 0, NotSerialized)
+            Method (_CRS, 0)
             {
                 Return (ConcatenateResTemplate (SBFB, SBFG))
             }

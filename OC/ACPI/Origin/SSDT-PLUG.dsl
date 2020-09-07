@@ -1,5 +1,5 @@
 //X86 Inject
-DefinitionBlock ("", "SSDT", 2, "DXPS", "CpuPlug", 0x00003000)
+DefinitionBlock ("", "SSDT", 2, "DXPS", "CPLG", 0x00003000)
 {
     External (_PR.CPU0, ProcessorObj)
 
