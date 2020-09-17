@@ -212,6 +212,10 @@
 			<key>FixOwnership</key>
 			<true/>
 			<key>AddClockID</key>
+			<false/>
+			<key>Inject</key>
+			<false/>
+			<key>HighCurrent</key>
 			<true/>
 		</dict>
 		<key>Properties</key>
