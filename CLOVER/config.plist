@@ -12,6 +12,7 @@
 		<key>SortedOrder</key>
 		<array>
 			<string>SSDT-XOSI.aml</string>
+			<string>SSDT-USBP.aml</string>
 			<string>SSDT-PCID.aml</string>
 			<string>SSDT-ADP1.aml</string>
 			<string>SSDT-PLUG.aml</string>
@@ -30,6 +31,8 @@
 			<dict>
 				<key>TableId</key>
 				<string>xh_rvp11</string>
+				<key>DropForAllOS</key>
+				<false/>
 				<key>Signature</key>
 				<string>SSDT</string>
 			</dict>
