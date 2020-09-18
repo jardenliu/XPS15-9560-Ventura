@@ -69,7 +69,7 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "USBP", 0x00000000)
                     PCKG [Zero] = Zero
                 }
 
-                If ((USBP == 0x03))
+                If ((USBP == 0x04))
                 {
                     PCKG [One] = Zero
                 }
@@ -496,7 +496,7 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "USBP", 0x00000000)
         }
     }
 
-    If ((CondRefOf (\_SB.PCI0.RP15.PXSX) && (TBTS == One))))
+    If ((CondRefOf (\_SB.PCI0.RP15.PXSX) && (TBTS == One)))
     {
         Scope (\_SB.PCI0.RP15.PXSX)
         {
