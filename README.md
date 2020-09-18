@@ -108,7 +108,7 @@
 
 1. 关闭 wifi 唤醒和小憩，`系统偏好设置` -> `节能` 取消两个选项卡中的`小憩`和`唤醒以供Wi-Fi网络访问`的勾选。
 2. 关闭蓝牙唤醒电脑, `系统偏好设置` -> `蓝牙` -> `高级` 取消所有勾选。
-3. 对于 *非 DW1830* ，需要替换`Post-install/非DW1830BT/USBPower.kext`到`CLOVER/kexts/Other/`
+3. 对于 *非 DW1830* ，需要替换`Post-install/非DW1830BT/SSDT-USBP.aml`到`CLOVER/ACPI/patched/`
 4. 对于 *DW1830* ，为了让其在Windows下以更佳状态工作，请在Windows中按下`Win+X+M`打开`设备管理器`，在`网络适配器`栏目下双击`Dell Wireless 1830 802.11ac`（即无线网卡）在高级选项卡中找到`Bluetooth Cooperation`（前面 Bluetooth 一致，后边可能不同），设置为`Disable`。
 
 ### 3. 仿冒以太网卡以使用App Store（来自 [keysun11952](https://github.com/keysun11952)）

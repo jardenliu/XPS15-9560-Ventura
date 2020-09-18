@@ -79,7 +79,8 @@ If you are **not** using i7-7700HQ，please notice：
 
 1. Disable Power Nap，`System Preferences` -> `Energy Saver` disable all `Power Nap` options, and disable `Wake for Wi-Fi network access` option;
 2. dissble Wake for Bluetooth, `System Preferences` -> `Bluetooth` -> `Advanced` disable all options;
-3. For **_DW1830_** users, in order to imporve its performance and stability in Windows, please hit `Win+X+M` to open `Device Manager`, find the column Network Adapter and find `Dell Wireless 1830 802.11ac` and double click it, in the `Advanced` tab, find `Bluetooth Cooperation` and set it to `Disable`.  
+3. For *_non DW1830_* users, you need replace `Post-install/non-DW1830BT/SSDT-USBP.aml` to `CLOVER/ACPI/patched/`;
+4. For **_DW1830_** users, in order to imporve its performance and stability in Windows, please hit `Win+X+M` to open `Device Manager`, find the column Network Adapter and find `Dell Wireless 1830 802.11ac` and double click it, in the `Advanced` tab, find `Bluetooth Cooperation` and set it to `Disable`.  
 
 ### 3. Fake Ethernet Card to use App Store（from [keysun11952](https://github.com/keysun11952)）
 
