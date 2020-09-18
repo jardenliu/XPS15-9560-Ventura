@@ -416,10 +416,10 @@
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
+				<key>#AAPL00,override-no-connect</key>
+				<data>AP///////wBNEI0UwCyJ1QUcAQSlIhN4Dt8ZqVM0vCUMUVQAAAABAQEBAQEBAQEBAQEBAQEBTdAAoPBwPoAwIDUAWMIQAAAapqYAoPBwPoAwIDUAWMIQAAAYAAAA/QA4TB5TEQAKICAgICAgAAAA/ABDb2xvciBMQ0QKICAgAK8=</data>
 				<key>AAPL,ig-platform-id</key>
 				<data>AAAbWQ==</data>
-				<key>AAPL00,override-no-connect</key>
-				<data>AP///////wBNEI0UwCyJ1QUcAQSlIhN4Dt8ZqVM0vCUMUVQAAAABAQEBAQEBAQEBAQEBAQEBTdAAoPBwPoAwIDUAWMIQAAAapqYAoPBwPoAwIDUAWMIQAAAYAAAA/QA4TB5TEQAKICAgICAgAAAA/ABDb2xvciBMQ0QKICAgAK8=</data>
 				<key>device-id</key>
 				<data>G1kAAA==</data>
 				<key>enable-hdmi-dividers-fix</key>
