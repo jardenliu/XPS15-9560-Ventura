@@ -228,12 +228,6 @@
 				<data>SAAAAA==</data>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
-				<key>AAPL,slot-name</key>
-				<string>Built In</string>
-				<key>model</key>
-				<string>CM238 HD Audio Controller</string>
-				<key>device_type</key>
-				<string>Audio device</string>
 				<key>RM,device-id</key>
 				<data>cJ0AAA==</data>
 			</dict>
