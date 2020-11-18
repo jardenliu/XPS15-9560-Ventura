@@ -4,6 +4,9 @@
 
  [中文](README.md) | [English](README_EN.md) 
 
+ ## Warning
+ Known bug: The Refresh-Rate is only 48Hz at 4K resolution
+
 ## Integrated Kexts, EFI and so on Update 2020-08-04
 
 1. Update `OpenCore` to 0.6.0;

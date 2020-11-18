@@ -4,6 +4,10 @@
 
  [中文](README.md) | [English](README_EN.md)
 
+
+ ## 提醒
+ 已知BUG：4k分辨率下 刷新率只有48Hz
+
 ## 内核扩展与引导等其他更新 2020-08-04
 
 1. 更新`OpenCore`至0.6.0；
