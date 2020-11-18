@@ -1,4 +1,4 @@
-# XPS15-9560-Catalina
+# XPS15-9560-BigSur
 
 > XPS15-9560 Hackintosh OpenCore Config.
 
@@ -11,7 +11,7 @@
 3. Fix some HDMI Issues;
 4. Use RTC Fix to fix some boot issues;
 
-For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/OpenCore/changelog.md)
+For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-BigSur/blob/OpenCore/changelog.md)
 
 ## Configuration
 

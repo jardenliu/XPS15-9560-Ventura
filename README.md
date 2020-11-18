@@ -1,6 +1,6 @@
-# XPS15-9560-Catalina
+# XPS15-9560-BigSur
 
-> xps15-9560 吃上黑果的 OpenCore 配置，不方便下载的童鞋可以前往[yeliujun/XPS15-9560-Catalina](https://gitee.com/yeliujun/XPS15-9560-Catalina.git)
+> xps15-9560 吃上黑果的 OpenCore 配置，不方便下载的童鞋可以前往[yeliujun/XPS15-9560-BigSur](https://gitee.com/yeliujun/XPS15-9560-BigSur.git)
 
  [中文](README.md) | [English](README_EN.md)
 
@@ -11,7 +11,7 @@
 3. 修复一些HDMI音频问题；
 4. 使用RTCfix以修复一些潜在的启动问题；
 
-更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Catalina/blob/OpenCore/changelog.md)
+更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-BigSur/blob/OpenCore/changelog.md)
 
 
 ## 配置
