@@ -5,7 +5,8 @@
  [中文](README.md) | [English](README_EN.md) 
 
  ## Warning
- Known bug: The Refresh-Rate is only 48Hz at 4K resolution
+ - Known bug: The Refresh-Rate is only 48Hz at 4K resolution
+ - Now only OC branch supports the BidSur
 
 ## Integrated Kexts, EFI and so on Update 2020-08-04
 
