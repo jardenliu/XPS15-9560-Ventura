@@ -5,7 +5,8 @@ path=${0%/*}
 sudo mount -uw /
 sudo launchctl remove /Library/LaunchAgents/good.win.ALCPlugFix.plist
 sudo rm -rf /Library/LaunchAgents/good.win.ALCPlugFix.plist
-sudo rm -rf /usr/bin/ALCPlugFix
+sudo rm -rf /usr/local/bin/ALCPlugFix
+sudo rm -rf /usr/local/bin/hda-verb
 
 echo '卸载ALCPlugFix守护进程完成！'
 echo '重建缓存中，请稍候……'
