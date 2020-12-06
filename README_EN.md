@@ -8,12 +8,12 @@
  - Known bug: The Refresh-Rate is only 48Hz at 4K resolution
  - Now only OC branch supports the BidSur
 
-## Integrated Kexts, EFI and so on Update 2020-08-04
+## Integrated Kexts, EFI and so on Update 2020-12-3
 
-1. Update `OpenCore` to 0.6.0;
-2. Update All `Kernel Extensions` to the last version;
-3. Fix some HDMI Issues;
-4. Use RTC Fix to fix some boot issues;
+1. Update `OpenCore` to 0.6.04
+2. Update All `Kernel Extensions` to the latest version;
+3.  MACOS big sur support
+4. Fixed battery && trackpad setting
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-BigSur/blob/OpenCore/changelog.md)
 
@@ -100,12 +100,12 @@ set `Post-install/HoRNDIS.kext` to `OC/kexts`, then edit `Kernel/Add` part in `O
 #### 3. Unlock Root directory
 
 ```
-sudo mount -uw /
+sudo mount -uw / (remove snapshot required)
 ```
 
-#### 4. macOS Minor Update Suggestions
+<!-- #### 4. macOS Minor Update Suggestions
 
-Rebuild kextcache after each macOS minor update, you can create a file named `rebuilt.command` containing the command `sudo kextcache -i /`. When an update is finished, you can directly run this file and input your password to rebuild kextcache. This can repair some minor issues such as `Brightness Control Failure` or `USB-C Device cannot work properly`.
+Rebuild kextcache after each macOS minor update, you can create a file named `rebuilt.command` containing the command `sudo kextcache -i /`. When an update is finished, you can directly run this file and input your password to rebuild kextcache. This can repair some minor issues such as `Brightness Control Failure` or `USB-C Device cannot work properly`. -->
 
 
 ### Wifi & Bluetooth Setting
