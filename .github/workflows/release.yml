@@ -27,6 +27,9 @@ jobs:
       - name: build release file
         run: sh ./make.sh
 
+      - name: list files
+        run: ls -a
+
       - name: create release
         uses: jardenliu/create-release@master
         with:

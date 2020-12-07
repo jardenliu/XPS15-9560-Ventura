@@ -4,6 +4,9 @@
 
  [中文](README.md) | [English](README_EN.md)
 
+ ## 下载
+前往[release页面](https://github.com/jardenliu/XPS15-9560-BigSur/releases/tag/latest)下载
+
 
  ## 提醒
  - 已知BUG：4k分辨率下 刷新率只有48Hz

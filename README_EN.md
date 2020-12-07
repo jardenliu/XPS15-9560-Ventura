@@ -4,6 +4,9 @@
 
  [中文](README.md) | [English](README_EN.md) 
 
+  ## Download
+[release](https://github.com/jardenliu/XPS15-9560-BigSur/releases/tag/latest)
+
  ## Warning
  - Known bug: The Refresh-Rate is only 48Hz at 4K resolution
  - Now only OC branch supports the BidSur
