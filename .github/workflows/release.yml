@@ -37,5 +37,7 @@ jobs:
           body: >
             Latest auto release corresponding to commit ${{github.sha}} 🔥.
           assets: >
-            XPS15-9560-4K-OC.zip:i7-4K-OC.zip:application/zip
-            XPS15-9560-1080P-OC.zip:i7-1080P-OC.zip:application/zip            
+            XPS15-9560-i5-4K-OC.zip:i5-4K-OC.zip:application/zip
+            XPS15-9560-i7-4K-OC.zip:i7-4K-OC.zip:application/zip
+            XPS15-9560-i5-1080P-OC.zip:i5-1080P-OC.zip:application/zip            
+            XPS15-9560-i7-1080P-OC.zip:i7-1080P-OC.zip:application/zip
