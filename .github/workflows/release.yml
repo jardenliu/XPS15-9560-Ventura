@@ -26,17 +26,16 @@ jobs:
       # Runs a single command using the runners shell
       - name: build release file
         run: sh ./make.sh
-      - name: mv files
-        run: mkdir packages && mv -f ./XPS15-9560-**.zip packages/
 
-      - name: Release
-        uses: sondreb/action-release@master
+      - name: create release
+        uses: jardenliu/create-release@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          folder: '${{github.workspace}}/packages/'
-          draft: false
-          prerelease: true
+          code: latest
+          name: Latest Release
+          recreate: true
           body: >
-            Latest auto release corresponding to commit ${{github.sha}}
-          name: 'latest'
-          tag: latest
+            Latest auto release corresponding to commit ${{github.sha}} 🔥.
+          assets: >
+            XPS15-9560-4K-OC.zip:i7-4K-OC.zip:application/zip
+            XPS15-9560-1080P-OC.zip:i7-1080P-OC.zip:application/zip            
