@@ -4,19 +4,16 @@
 
  [中文](README.md) | [English](README_EN.md)
 
- ## 下载
-前往[release页面](https://github.com/jardenliu/XPS15-9560-BigSur/releases/tag/latest)下载
-
-
  ## 提醒
  - 已知BUG：4k分辨率下 刷新率只有48Hz
- - 当前BigSur支持OC
+ - *当前仅OC分支支持BigSur*
+ - 处理器为`Core i5`'以及屏幕分辨率为`1080P`时请务必阅读 [其他配置（i5等/1080P）说明](##其他配置（i5等/1080P）说明)。
 
-## 内核扩展与引导等其他更新 2020-12-3
+## 内核扩展与引导等其他更新 2020-12-7
 
 1. 更新`OpenCore`至0.6.4(自编译)；
 2. 更新所有`内核扩展`到最新版；
-3. MacOS 11 支持
+3. 支持macOS 11.0.1并支持macOS 10.15.7 19H12
 4. 修复电池和触控板设置
 
 
@@ -46,12 +43,16 @@
 
 ## 当前问题
 1. ~~可能会出现插电源kp的情况~~（已修复）
+2. 在macOS Big Sur下，使用部分拓展坞（如Dell WD15）的DP接口输出，只能输出到1080P（切换至HDMI口无问题，在Catalina下接口均正常，应该为macOS Big Sur的问题）。
 
 ## 升级教程
 
 1. 下载仓库配置文件。
 2. 将自己的三码替换到下 OC 目录下的`config.plist`对应位置。
 3. 把下载的 OC 替换自己本地的 OC 文件夹。
+
+对于macOS Big Sur而言，目前已经不能通过`sudo kextcache -i /`来重建kext缓存。
+对于macOS Catalina:
 <!-- 4. 升级完之后，可能会出现以下异常现象，如`亮度不能调节`，`USB-C设备不能正常工作`等，则需要重建kext缓存。打开`终端`运行`sudo kextcache -i /`命令，重建缓存，重启。 -->
 <!-- 5. 建议：每次小版本升级后请重建缓存，可以在桌面新建一个`rebuilt.command`文件，内用文本编辑器写入`sudo kextcache -i /`后保存即可，有需要时双击后输入电脑密码即可重建。 -->
 
@@ -74,6 +75,20 @@
 6. 这步和白果一样，如果你需要分区，可以在`磁盘管理`进行分区，如果已经分好区，但是在安装阶段不可用，则需要在磁盘管理格式化分区，这里需要记下自己安装macOS的分区名称，这里先记作`XXXX`，随后就是无脑安装了；
 7. 安装过程中会重启几次，当重启后`OpenCore`中出现`macOS Install from XXXX(分区名称)`则选择该项（U盘的使命已经结束）拔掉U盘，这步安装完成后会重启；
 8. 待第七步结束之后你的`OpenCore`中应该会出现一个`macOS`的选项，回车键进入就可以正常使用了。
+9. 安装完毕后，可按需使用Post-install文件夹中的工具以提升使用体验，比如解决耳机孔热插拔问题的ALC298PluginFix等等。
+
+## 从 Clover 迁移至 OpenCore
+
+为了正常使用macOS Big Sur，建议从Clover更换引导至OpenCore。
+大致步骤：
+
+1. 工具准备：需要OpenCore Configurator（以下简称OCG）与Clover Configurator（以下简称CCG），备份好个人数据。
+2. 务必先解锁`CFG Lock`或修改其他参数，参见[提示](##提示)。
+3. 下载本Repo中对应配置的zip，并解压缩得到OC文件夹，并放入EFI分区的EFI文件夹中。可以用DiskGenius(Windows)或CCG/OCG的挂载EFI的工具挂载EFI分区后放入。
+4. 如果打算保留在Clover中的序列号，请务必用CCG读取原序列号，并在OCG中复原所有值；也可以重新用OCG重新生成新的序列号，机器型号选择配备i7-7700HQ的`MacBookPro14,3`，记得检测序列号是否被占用。*若更换序列号，切记先在系统偏好设置中退出本机登录的Apple ID*
+5. 如果是1080P屏幕，建议删除已经注入的EDID，参见[其他配置（i5等/1080P）说明](##其他配置（i5等/1080P）说明)。
+6. 配置好之后，便可重启电脑，在BIOS中添加OpenCore的EFI启动项，并从OpenCore启动。
+7. 如果App Store无法登录，可以在OpenCore引导界面按下空格，找到对应菜单项来重置NVRAM。
 
 ## 提示
 
@@ -82,8 +97,15 @@
 
 ## 其他配置（i5等/1080P）说明
 如果你是1080P用户，请注意以下几点：
-1. （非必须）使用[xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)项目提供的方式开启HiDPI；
-2. 使用`ProperTree`或者`OpenCore Configurator`修改`OC\Config.plist`中`NVRAM\4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14`部分`UIScale`值设置为`1`或用`其他文本编辑器（如记事本等）`修改`UIScale`部分如下：
+1. 如果笔记本内屏无法点亮但外接屏幕可以工作，请使用编辑工具（记事本等等均可）删除以下片段：
+   
+```
+	<key>AAPL00,override-no-connect</key>
+	<data>AP///////wBNEI0UAAAAAAUcAQSlIhN4Dt8ZqVM0vCUMUVQAAAABAQEBAQEBAQEBAQEBAQEBUNAAoPBwPoAwIDUAWMIQAAAapqYAoPBwPoAwIDUAWMIQAAAYAAAA/QA4TB5TEQAKICAgICAgAAAA/ABDb2xvciBMQ0QKICAgAJM=</data>
+```
+
+2. （非必须）使用[xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)项目提供的方式开启HiDPI；
+3. 使用`ProperTree`或者`OpenCore Configurator`修改`OC\Config.plist`中`NVRAM\4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14`部分`UIScale`值设置为`1`或用`其他文本编辑器（如记事本等）`修改`UIScale`部分如下：
 
 ```
 <key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
@@ -92,6 +114,8 @@
 	<data>AQ==</data>
 </dict>
 ```
+
+此修改可以改变OpenCore引导界面的缩放大小。
 
 如果你是非i7用户，请注意以下几点：
 1. （必须）确保你现在已经安装好系统了；

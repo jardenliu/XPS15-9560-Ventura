@@ -4,18 +4,16 @@
 
  [中文](README.md) | [English](README_EN.md) 
 
-  ## Download
-[release](https://github.com/jardenliu/XPS15-9560-BigSur/releases/tag/latest)
-
  ## Warning
  - Known bug: The Refresh-Rate is only 48Hz at 4K resolution
- - Now only OC branch supports the BidSur
+ - *Now only OC branch supports macOS Big Sur*
+ -  If yours' processor is `Core i5` or yours' screen resolution is `1080P`, please read the [Other Configurations (CPU like i5 or others/1080P) Note](##-Other-Configurations-(CPU-like-i5-or-others/-1080P)-Note)
 
-## Integrated Kexts, EFI and so on Update 2020-12-3
+## Integrated Kexts, EFI and so on Update 2020-12-7
 
 1. Update `OpenCore` to 0.6.04
 2. Update All `Kernel Extensions` to the latest version;
-3.  MACOS big sur support
+3. Support BOTH `macOS Big Sur 11.0.1` and `macOS Catalina 10.15.7 19H12`
 4. Fixed battery && trackpad setting
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-BigSur/blob/OpenCore/changelog.md)
@@ -37,22 +35,45 @@ For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15
 5. Stock Wi-Fi Card Killer Wireless 1535
 6. ~~USB Type-C Hotplug~~
 7. Everything else works well
+   
+8. In macOS Big Sur, the miniDisplayPort video output of some dock like `Dell WD15` could only output 1080P resolution due to macOS Big Sur (the HDMI port works fine, all ports works fine in Catalina via this OC bootloader).
 
 ## Installation
 
 Please refer to the detailed installation tutorial [Xiaomi Mi Notebook Pro High Sierra 10.13.6](https://www.tonymacx86.com/threads/guide-xiaomi-mi-notebook-pro-high-sierra-10-13-6.242724) or video tutorial [Xiaomi NoteBook PRO HACKINTOSH INSTALLATION GUIDE !!!](https://www.youtube.com/watch?v=72sPmkpxCvc).
 
-If the tracpad doesn't work during installation, please plug a wired mouse or a wireless mouse projector before the installation. After the installation completes, open `Terminal.app` and type `sudo kextcache -i /`. Wait for the process ending and restart the device. Enjoy your trackpad!
+## From Clover to OpenCore
+To make macOS Big Sur working for XPS 15 9560, it is highly recommended to switch from Clover to OpenCore
+
+Steps:
+1. Download OpenCore Configurator(OCG)与Clover Configurator(CCG) and make necessary backups.
+2. Unlock `CFG Lock` or change other values to make OpenCore ready for macOS, see [Warning](##Warning) for details.
+3. Download the zip file that fits your model from release, extract the zip file and put it into `EFI partition/EFI/`. 
+4. If you decide to keep your serial number you have used in Clover, you should read the old serial number info using CCG and restore these data manually. Otherwise, you could re-generate a series of SN info via OCG, the model should be `MacBookPro14,3`, remember check if the generated has been occupied.*IF YOU CHANGE YOUR SN, PLEASE LOGOUT YOUR APPLE ID IN SYSTEM PREFERENCE IN ADVANCE*
+5. If yours' internal screen resolution is  `1080P`, delete the injected EDID in config.plist, see `OtherConfigurationNote`.
+6. Restart after you configurated OpenCore properly, then add OpenCore.efi to the Boot Sequence in BIOS settings and boot via OpenCore.
+7. If you cannot login to App Store, hit `Space` in OpenCore bootloader menu and choose `Reset NVRAM`.
+
+
+If the tracpad doesn't work during installation, please plug a wired mouse or a wireless mouse projector before the installation.
 
 ## Warning
 
 1. Don't turn on `FileValue Encryption`！！！
 2. Before using `OpenCore`, please make sure you have disabled `CFGlock`! If you don't disable `CFGLock`, you need change values of `AppleXcpmCfgLock` and `IgnoreInvalidFlexRatio` must be `True` or you will boot failure.
 
-## Other Configurations (CPU like i5 or others/1080P) note
+## Other Configurations (CPU like i5 or others/1080P) Note
+
 If you are using a 1080P screen, please notice：
-1. （not must）Use [xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi) to enable HiDPI；
-2. Use `ProperTree` or `OpenCore Configurator` to edit `OC\Config.plist`, and change the `UIScale` part Value to `1`, or use `Other Text Editor (Such as NotePad)` and edit the `UIScale` part as after shows：
+1. If you occurred the issue that your internal display couldn't work while your external display works fine, you should delete the injected EDID in config.plist, use either editor is OK:
+
+```
+	<key>AAPL00,override-no-connect</key>
+	<data>AP///////wBNEI0UAAAAAAUcAQSlIhN4Dt8ZqVM0vCUMUVQAAAABAQEBAQEBAQEBAQEBAQEBUNAAoPBwPoAwIDUAWMIQAAAapqYAoPBwPoAwIDUAWMIQAAAYAAAA/QA4TB5TEQAKICAgICAgAAAA/ABDb2xvciBMQ0QKICAgAJM=</data>
+```
+
+2. (not must)Use [xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi) to enable HiDPI；
+3. Use `ProperTree` or `OpenCore Configurator` to edit `OC\Config.plist`, and change the `UIScale` part Value to `1`, or use `Other Text Editor (Such as NotePad)` and edit the `UIScale` part as after shows：
    ```
    <key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
 	<dict>
