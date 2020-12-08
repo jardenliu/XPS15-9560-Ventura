@@ -6,7 +6,7 @@
 
  ## Warning
  - Known bug: The Refresh-Rate is only 48Hz at 4K resolution
- - *Now only OC branch supports macOS Big Sur*
+ - **Now only OC branch supports macOS Big Sur**
  -  If yours' processor is `Core i5` or yours' screen resolution is `1080P`, please read the [Other Configurations (CPU like i5 or others/1080P) Note](##-Other-Configurations-(CPU-like-i5-or-others/-1080P)-Note)
 
 ## Integrated Kexts, EFI and so on Update 2020-12-7
@@ -49,7 +49,7 @@ Steps:
 1. Download OpenCore Configurator(OCG)与Clover Configurator(CCG) and make necessary backups.
 2. Unlock `CFG Lock` or change other values to make OpenCore ready for macOS, see [Warning](##Warning) for details.
 3. Download the zip file that fits your model from release, extract the zip file and put it into `EFI partition/EFI/`. 
-4. If you decide to keep your serial number you have used in Clover, you should read the old serial number info using CCG and restore these data manually. Otherwise, you could re-generate a series of SN info via OCG, the model should be `MacBookPro14,3`, remember check if the generated has been occupied.*IF YOU CHANGE YOUR SN, PLEASE LOGOUT YOUR APPLE ID IN SYSTEM PREFERENCE IN ADVANCE*
+4. If you decide to keep your serial number you have used in Clover, you should read the old serial number info using CCG and restore these data manually. Otherwise, you could re-generate a series of SN info via OCG, the model should be `MacBookPro14,3`, remember check if the generated has been occupied.**IF YOU CHANGE YOUR SN, PLEASE LOGOUT YOUR APPLE ID IN SYSTEM PREFERENCE IN ADVANCE**
 5. If yours' internal screen resolution is  `1080P`, delete the injected EDID in config.plist, see `OtherConfigurationNote`.
 6. Restart after you configurated OpenCore properly, then add OpenCore.efi to the Boot Sequence in BIOS settings and boot via OpenCore.
 7. If you cannot login to App Store, hit `Space` in OpenCore bootloader menu and choose `Reset NVRAM`.
