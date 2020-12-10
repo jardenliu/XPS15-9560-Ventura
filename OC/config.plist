@@ -469,7 +469,7 @@
 				<key>Comment</key>
 				<string>Fake PCI ID</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/FakePCIID</string>
 				<key>MaxKernel</key>
@@ -487,7 +487,7 @@
 				<key>Comment</key>
 				<string>Fake PCI HDMI AUDIO</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string></string>
 				<key>MaxKernel</key>
