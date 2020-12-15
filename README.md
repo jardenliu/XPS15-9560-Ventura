@@ -5,8 +5,10 @@
  [中文](README.md) | [English](README_EN.md)
 
  ## 下载
-前往[release页面](https://github.com/jardenliu/XPS15-9560-BigSur/releases/tag/latest)下载
-
+[i7-4K](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i7-4K-OC.zip)<br/>
+[i7-1080P](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i7-1080P-OC.zip)<br/>
+[i5-4K](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i5-4K-OC.zip)<br/>
+[i5-1080P](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i5-1080P-OC.zip)
 
  ## 提醒
  - 已知BUG：4k分辨率下 刷新率只有48Hz

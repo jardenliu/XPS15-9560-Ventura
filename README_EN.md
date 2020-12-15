@@ -4,8 +4,11 @@
 
  [中文](README.md) | [English](README_EN.md) 
 
-  ## Download
-[release](https://github.com/jardenliu/XPS15-9560-BigSur/releases/tag/latest)
+  ## Release
+[i7-4K](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i7-4K-OC.zip)<br/>
+[i7-1080P](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i7-1080P-OC.zip)<br/>
+[i5-4K](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i5-4K-OC.zip)<br/>
+[i5-1080P](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i5-1080P-OC.zip)
 
  ## Warning
  - Known bug: The Refresh-Rate is only 48Hz at 4K resolution
