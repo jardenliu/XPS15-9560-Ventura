@@ -1,15 +1,8 @@
 # var
 FILE_NAME="XPS15-9560-i5-1080P"
 
-# clear 
-rm -rf ./.dist
-
-# create dir
-mkdir -p .dist
-
-# copy config && tools
-cp -rf OC .dist/
-cp -rf Post-install .dist/
+curDir=$(pwd)
+sh $curDir/build/clear.sh
 
 # 
 sed -i '' 's/AAPL00,override-no-connect/#AAPL00,override-no-connect/g' .dist/OC/config.plist
