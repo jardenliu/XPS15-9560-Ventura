@@ -2,7 +2,7 @@
 
 
 path=${0%/*}
-sudo mount -uw /
+
 sudo launchctl remove /Library/LaunchAgents/good.win.ALCPlugFix.plist
 sudo rm -rf /Library/LaunchAgents/good.win.ALCPlugFix.plist
 sudo rm -rf /usr/local/bin/ALCPlugFix
