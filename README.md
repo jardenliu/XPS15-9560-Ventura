@@ -10,10 +10,6 @@
 [i5-4K](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i5-4K-OC.zip)<br/>
 [i5-1080P](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i5-1080P-OC.zip)
 
- ## 提醒
- - 已知BUG：4k分辨率下 刷新率只有48Hz
- - 当前BigSur支持OC
-
 ## 内核扩展与引导等其他更新 2020-12-3
 
 1. 更新`OpenCore`至0.6.4(自编译)；

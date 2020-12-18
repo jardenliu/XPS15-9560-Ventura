@@ -10,10 +10,6 @@
 [i5-4K](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i5-4K-OC.zip)<br/>
 [i5-1080P](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i5-1080P-OC.zip)
 
- ## Warning
- - Known bug: The Refresh-Rate is only 48Hz at 4K resolution
- - Now only OC branch supports the BidSur
-
 ## Integrated Kexts, EFI and so on Update 2020-12-3
 
 1. Update `OpenCore` to 0.6.04
