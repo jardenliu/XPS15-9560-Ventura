@@ -1332,7 +1332,7 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string>-lilubetaall -liluforce vsmcgen=1 darkwake=1 keepsyms=1 rtsx_timeout_shift=2 agdpmod=vit9696 brcmfx-country=#a bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300 -disablegfxfirmware -igfxmpc</string>
+				<string>-lilubetaall -liluforce vsmcgen=1 darkwake=1 keepsyms=1 rtsx_timeout_shift=2 agdpmod=vit9696 brcmfx-country=#a bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300 -disablegfxfirmware -igfxmpc alcverbs=1</string>
 				<key>csr-active-config</key>
 				<data>/38AAA==</data>
 				<key>prev-lang:kbd</key>

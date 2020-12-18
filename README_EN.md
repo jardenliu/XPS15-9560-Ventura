@@ -14,8 +14,8 @@
 
 1. Update `OpenCore` to 0.6.04
 2. Update All `Kernel Extensions` to the latest version;
-3.  MACOS big sur support
-4. Fixed battery && trackpad setting
+3. The 60Hz Refresh-Rate supported for 4K
+4. Upgrade `ALC298PlugFix` to `ALCPlugFix-Swift`
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-BigSur/blob/OpenCore/changelog.md)
 

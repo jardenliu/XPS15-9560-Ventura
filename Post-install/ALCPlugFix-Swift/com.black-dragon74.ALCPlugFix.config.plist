@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Comment</key>
+		<string>Enable combo jack mic detection</string>
+		<key>Enabled</key>
+		<true/>
+		<key>Node ID</key>
+		<string>0x18</string>
+		<key>On Boot</key>
+		<true/>
+		<key>On Connect</key>
+		<true/>
+		<key>On Disconnect</key>
+		<false/>
+		<key>On Mute</key>
+		<false/>
+		<key>On Sleep</key>
+		<false/>
+		<key>On Unmute</key>
+		<false/>
+		<key>On Wake</key>
+		<true/>
+		<key>Param</key>
+		<string>0x22</string>
+		<key>Verb</key>
+		<string>SET_PIN_WIDGET_CONTROL</string>
+	</dict>
+</array>
+</plist>
