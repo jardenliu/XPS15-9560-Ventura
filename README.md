@@ -77,6 +77,28 @@
 1. 不要开启`文件保险箱加密(FileValue)`，不要开启`文件保险箱加密(FileValue)`，不要开启`文件保险箱加密(FileValue)`！！！
 2. 使用OC前，请务必保证你已经解锁了`CFGlock`!如果你没有解锁`CFGLock`，则必须修改配置中`AppleXcpmCfgLock`以及`IgnoreInvalidFlexRatio`两项为`True`否则将启动失败。
 
+
+## UEFI BIOS 设置
+
+| Variable                                 | Offset | Default         | Desired         | Comment |
+|------------------------------------------|--------|-----------------|-----------------|---------|
+| Above 4GB MMIO BIOS assignment           | 0x79A  | 0x00 (Disabled) | 0x01 (Enabled)  |         |
+| ACPI Removal Object Suppport             | 0x491  | 0x00 (Disabled) | 0x00            |         |
+| CFG Lock                                 | 0x4ED  | 0x01 (Enabled)  | 0x00 (Disabled) |         |
+| CSM Support                              | 0xFC8  | 0x01 (Enabled)  | 0x00 (Disabled) |         |
+| DVMT Pre-Allocated                       | 0x795  | 0x02 (64M)      | 0x02 (64M)      |         |
+| DVMT Total Gfx Memory                    | 0x796  | 0x02 (256M)     | 0x03 (MAX)      |         |
+| GPIO filter                              | 0x47B  | 0x00            | 0x01            |         |
+| GPIO3 Force Pwr                          | 0x45F  | N/A             | 0x01            |         |
+| Native OS Hot Plug                       | 0x479  | N/A             | 0x01            |         |
+| Skip PCI OptionRom                       | 0x48F  | 0x00            | 0x00            |         |
+| SW SMI on TBT hot-plug                   | 0x47A  | 0x01 (Enabled)  | 0x01            |         |
+| Thunderbolt Boot Support                 | 0x45B  | 0x00 (Disabled) | 0x01            |         |
+| Thunderbolt Usb Support                  | 0x45A  | 0x00 (Disabled) | 0x01            |         |
+| Thunderbolt(TM) PCIe Cache-line Size     | 0x45E  | 0x20 (32)       | 0x80 (128)      |         |
+| Wait time in ms after applying Force Pwr | 0x460  | 0xC8 (200)      | 0xC8 (200)      |         |
+| Wake From Thunderbolt(TM) Devices        | 0x452  | 0x01 (Enabled)  | 0x01            |         |
+
 ## 其他配置（i5等/1080P）说明
 如果你是1080P用户，请注意以下几点：
 1. （非必须）使用[xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)项目提供的方式开启HiDPI；
