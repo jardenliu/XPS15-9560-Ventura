@@ -877,7 +877,7 @@
 				<key>Comment</key>
 				<string>SDCard</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/Sinetek-rtsx</string>
 				<key>MaxKernel</key>
