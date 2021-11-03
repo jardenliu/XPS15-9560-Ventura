@@ -10,11 +10,10 @@
 [i5-4K](https://github.com/jardenliu/XPS15-9560-Monterey/releases/download/latest/i5-4K-OC.zip)<br/>
 [i5-1080P](https://github.com/jardenliu/XPS15-9560-Monterey/releases/download/latest/i5-1080P-OC.zip)
 
-### 2020-12-18
-1. 更新`OpenCore`至0.6.4； 
-2. 更新所有`内核扩展`到最新版 
-3. 4K内屏支持60Hz刷新率 
-4. 更新`ALC298PlugFix`为`ALCPlugFix-Swift`.
+### 2021-11-03
+1. 更新`OpenCore`至0.7.5； Update `OpenCore` to 0.7.5
+2. 更新所有`内核扩展`到最新版 Update All `Kernel Extensions` to the latest version;
+3. 支持Monterry 12.0.1
 
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Monterey/blob/OpenCore/changelog.md)
