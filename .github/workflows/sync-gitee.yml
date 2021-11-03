@@ -25,6 +25,6 @@ jobs:
           dst: gitee/yeliujun
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
           dst_token: ${{ secrets.GITEE_TOKEN }}
-          static_list: 'XPS15-9560-BigSur'
+          static_list: "XPS15-9560-Monterey"
           account_type: user
           force_update: true

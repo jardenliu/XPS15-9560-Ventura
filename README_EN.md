@@ -1,14 +1,14 @@
-# XPS15-9560-BigSur
+# XPS15-9560-Monterey
 
 > XPS15-9560 Hackintosh OpenCore Config.
 
  [中文](README.md) | [English](README_EN.md) 
 
   ## Release
-[i7-4K](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i7-4K-OC.zip)<br/>
-[i7-1080P](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i7-1080P-OC.zip)<br/>
-[i5-4K](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i5-4K-OC.zip)<br/>
-[i5-1080P](https://github.com/jardenliu/XPS15-9560-BigSur/releases/download/latest/i5-1080P-OC.zip)
+[i7-4K](https://github.com/jardenliu/XPS15-9560-Monterey/releases/download/latest/i7-4K-OC.zip)<br/>
+[i7-1080P](https://github.com/jardenliu/XPS15-9560-Monterey/releases/download/latest/i7-1080P-OC.zip)<br/>
+[i5-4K](https://github.com/jardenliu/XPS15-9560-Monterey/releases/download/latest/i5-4K-OC.zip)<br/>
+[i5-1080P](https://github.com/jardenliu/XPS15-9560-Monterey/releases/download/latest/i5-1080P-OC.zip)
 
 ## Integrated Kexts, EFI and so on Update 2020-12-3
 
@@ -17,7 +17,7 @@
 3. The 60Hz Refresh-Rate supported for 4K
 4. Upgrade `ALC298PlugFix` to `ALCPlugFix-Swift`
 
-For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-BigSur/blob/OpenCore/changelog.md)
+For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Monterey/blob/OpenCore/changelog.md)
 
 ## Configuration
 
@@ -46,7 +46,7 @@ If the tracpad doesn't work during installation, please plug a wired mouse or a 
 ## UEFI BIOS Variables Setup
 
 | Variable                                 | Offset | Default         | Desired         | Comment |
-|------------------------------------------|--------|-----------------|-----------------|---------|
+| ---------------------------------------- | ------ | --------------- | --------------- | ------- |
 | Above 4GB MMIO BIOS assignment           | 0x79A  | 0x00 (Disabled) | 0x01 (Enabled)  |         |
 | ACPI Removal Object Suppport             | 0x491  | 0x00 (Disabled) | 0x00            |         |
 | CFG Lock                                 | 0x4ED  | 0x01 (Enabled)  | 0x00 (Disabled) |         |
