@@ -1,14 +1,14 @@
-# XPS15-9560-Monterey
+# XPS15-9560-Ventura
 
 > XPS15-9560 Hackintosh OpenCore Config.
 
  [中文](README.md) | [English](README_EN.md) 
 
   ## Release
-[i7-4K](https://github.com/jardenliu/XPS15-9560-Monterey/releases/download/latest/i7-4K-OC.zip)<br/>
-[i7-1080P](https://github.com/jardenliu/XPS15-9560-Monterey/releases/download/latest/i7-1080P-OC.zip)<br/>
-[i5-4K](https://github.com/jardenliu/XPS15-9560-Monterey/releases/download/latest/i5-4K-OC.zip)<br/>
-[i5-1080P](https://github.com/jardenliu/XPS15-9560-Monterey/releases/download/latest/i5-1080P-OC.zip)
+[i7-4K](https://github.com/jardenliu/XPS15-9560-Ventura/releases/download/latest/i7-4K-OC.zip)<br/>
+[i7-1080P](https://github.com/jardenliu/XPS15-9560-Ventura/releases/download/latest/i7-1080P-OC.zip)<br/>
+[i5-4K](https://github.com/jardenliu/XPS15-9560-Ventura/releases/download/latest/i5-4K-OC.zip)<br/>
+[i5-1080P](https://github.com/jardenliu/XPS15-9560-Ventura/releases/download/latest/i5-1080P-OC.zip)
 
 ## Integrated Kexts, EFI and so on Update 2020-12-3
 
@@ -17,7 +17,7 @@
 3. The 60Hz Refresh-Rate supported for 4K
 4. Upgrade `ALC298PlugFix` to `ALCPlugFix-Swift`
 
-For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Monterey/blob/OpenCore/changelog.md)
+For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Ventura/blob/OpenCore/changelog.md)
 
 ## Configuration
 

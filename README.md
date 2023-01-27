@@ -1,14 +1,14 @@
-# XPS15-9560-Monterey
+# XPS15-9560-Ventura
 
-> xps15-9560 吃上黑果的 OpenCore 配置，不方便下载的童鞋可以前往[yeliujun/XPS15-9560-Monterey](https://gitee.com/yeliujun/XPS15-9560-Monterey.git)
+> xps15-9560 吃上黑果的 OpenCore 配置，不方便下载的童鞋可以前往[yeliujun/XPS15-9560-Ventura](https://gitee.com/yeliujun/XPS15-9560-Ventura.git)
 
  [中文](README.md) | [English](README_EN.md)
 
  ## 下载
-[i7-4K](https://github.com/jardenliu/XPS15-9560-Monterey/releases/download/latest/i7-4K-OC.zip)<br/>
-[i7-1080P](https://github.com/jardenliu/XPS15-9560-Monterey/releases/download/latest/i7-1080P-OC.zip)<br/>
-[i5-4K](https://github.com/jardenliu/XPS15-9560-Monterey/releases/download/latest/i5-4K-OC.zip)<br/>
-[i5-1080P](https://github.com/jardenliu/XPS15-9560-Monterey/releases/download/latest/i5-1080P-OC.zip)
+[i7-4K](https://github.com/jardenliu/XPS15-9560-Ventura/releases/download/latest/i7-4K-OC.zip)<br/>
+[i7-1080P](https://github.com/jardenliu/XPS15-9560-Ventura/releases/download/latest/i7-1080P-OC.zip)<br/>
+[i5-4K](https://github.com/jardenliu/XPS15-9560-Ventura/releases/download/latest/i5-4K-OC.zip)<br/>
+[i5-1080P](https://github.com/jardenliu/XPS15-9560-Ventura/releases/download/latest/i5-1080P-OC.zip)
 
 ### 2021-11-03
 1. 更新`OpenCore`至0.7.5； Update `OpenCore` to 0.7.5
@@ -16,7 +16,7 @@
 3. 支持Monterry 12.0.1
 
 
-更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Monterey/blob/OpenCore/changelog.md)
+更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Ventura/blob/OpenCore/changelog.md)
 
 
 ## 配置
