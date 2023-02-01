@@ -10,10 +10,13 @@
 [i5-4K](https://github.com/jardenliu/XPS15-9560-Ventura/releases/download/latest/i5-4K-OC.zip)<br/>
 [i5-1080P](https://github.com/jardenliu/XPS15-9560-Ventura/releases/download/latest/i5-1080P-OC.zip)
 
-### 2021-11-03
-1. 更新`OpenCore`至0.7.5； Update `OpenCore` to 0.7.5
+## 警告！！！
+触屏无法正常工作，静待 VoodooI2C 修复
+
+### 2023-02-01
+1. 更新`OpenCore`至0.8.8； Update `OpenCore` to 0.8.8
 2. 更新所有`内核扩展`到最新版 Update All `Kernel Extensions` to the latest version;
-3. 支持Monterry 12.0.1
+3. 支持Ventura 13.1
 
 
 更多详见[changelog.md](https://github.com/jardenliu/XPS15-9560-Ventura/blob/OpenCore/changelog.md)

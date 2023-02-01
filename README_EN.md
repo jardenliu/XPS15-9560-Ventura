@@ -10,12 +10,13 @@
 [i5-4K](https://github.com/jardenliu/XPS15-9560-Ventura/releases/download/latest/i5-4K-OC.zip)<br/>
 [i5-1080P](https://github.com/jardenliu/XPS15-9560-Ventura/releases/download/latest/i5-1080P-OC.zip)
 
-## Integrated Kexts, EFI and so on Update 2020-12-3
+## Warning !!!
+Touchscreen is not working in Ventura
 
-1. Update `OpenCore` to 0.6.04
+### 2023-02-01
+1. Update `OpenCore` to 0.8.8
 2. Update All `Kernel Extensions` to the latest version;
-3. The 60Hz Refresh-Rate supported for 4K
-4. Upgrade `ALC298PlugFix` to `ALCPlugFix-Swift`
+3. Ventura 13.1 Supported
 
 For more details, please visit [changelog.md](https://github.com/jardenliu/XPS15-9560-Ventura/blob/OpenCore/changelog.md)
 
