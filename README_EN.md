@@ -10,8 +10,6 @@
 [i5-4K](https://github.com/jardenliu/XPS15-9560-Ventura/releases/download/latest/i5-4K-OC.zip)<br/>
 [i5-1080P](https://github.com/jardenliu/XPS15-9560-Ventura/releases/download/latest/i5-1080P-OC.zip)
 
-## Warning !!!
-Touchscreen is not working in Ventura
 
 ### 2023-02-01
 1. Update `OpenCore` to 0.8.8
